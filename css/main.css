@@ -88,4 +88,55 @@ meter {
 
 /* #endregion normalization */
 
+/* #region Common */
+
+:root {
+    --color-white: #FFFFFF;
+    --color-warm-gray: #BFC0C0;
+    --color-very-dark-orange: #EF8354;
+    --gray-blue: #4F5D75;
+    --dark-gray-blue: #2D3142;
+    --color-black: #000000;
+    --font-size-small: 0.9rem;
+    --font-size-default: 1rem;
+    --font-size-large: 1.25rem;
+    --font-size-very-large: 1.5rem;
+    --font-size-extra-large: 1.9rem;
+}
+
+html {
+    font-size: 16px;
+}
+
+/* Common styling is placed in the all selector as placing it
+    in the body selector may not not target all elements resulting
+    in inconsistencies when developing a website */
+* {
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--font-size-default);
+}
+
+h1,
+h2,
+h3,
+h4,
+figcaption,
+legend{
+    font-weight: bold;
+}
+
+h1 {
+    font-size: var(--font-size-extra-large);
+}
+
+h2 {
+    font-size: var(--font-size-very-large);
+}
+
+
+
+/* #endregion Common */
+
+
 
