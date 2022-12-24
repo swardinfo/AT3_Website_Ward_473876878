@@ -120,10 +120,11 @@ html {
 h1,
 h2,
 h3,
-h4,S
+h4,
 figcaption,
 legend{
     font-weight: bold;
+    color: var(--color-dark-gray-blue);
 }
 
 h1 {
@@ -254,9 +255,14 @@ header > div:first-of-type a:hover {
     text-decoration: underline;
 }
 
+/* Banner with slogan and Find Us CTA removed from mobile devices */
+header > div:last-of-type {
+    display: none;
+}
+
 header > img {
     /* border: 1px solid green; */
 }
 
-
 /* #endregion header */
+
