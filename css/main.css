@@ -136,8 +136,44 @@ h2 {
     font-size: var(--font-size-very-large);
 }
 
-/* #endregion Common */
 
+/* Banner, mobile devices only, between nav menu and header image,
+    Banner above footer */
+    header > div:first-of-type,
+    section:last-of-type {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+/* CTAs
+    at end of menu,
+    in banner, mobile devices only, between nav menu and header image,
+    in banner, desktop only, below header image,
+    in banner above footer
+     */
+     header nav div > a,
+     header > div:first-of-type a,
+     header > div:last-of-type a,
+     section:last-of-type a {
+         background: var(--color-very-dark-orange);
+         text-align: center;
+         width: 40%;
+         height: fit-content;
+         padding: 0.25rem 0;
+     }
+
+     /* CTAs, underline on hover */
+     header nav div > a:hover,
+     header > div:first-of-type a:hover,
+     header > div:last-of-type a:hover,
+     section:last-of-type a:hover {
+         text-decoration: underline;
+     }
+
+/* #endregion Common */
 
 /* #region header */
 
@@ -179,10 +215,6 @@ header nav a p {
 /* Initially hide menu links. */
 header nav div {
     display: none;
-}
-
-header nav div.menu-open {
-    display: inline-block;
     position: fixed;
     right: 0;
     top: calc(7vw + 2.5rem);
@@ -190,15 +222,17 @@ header nav div.menu-open {
     background: var(--color-dark-gray-blue);
 }
 
+/* Show drop down menu when hamburger button clicked */
+header nav div.menu-open {
+    display: inline-block;
+}
+
+/* Add non-clickable space around nav links */
 header nav ul li {
     padding: 0.5rem 1rem;
 }
 
-/* Hide the Join CTA in the menu on mobile devices */
-header nav ul li:last-of-type {
-    display: none;
-}
-
+/* Nav links */
 header nav ul li a {
     display: inline-block;
     width: 100%;
@@ -209,16 +243,22 @@ header nav ul li a {
     transition: transform 0.4s;
 }
 
+/* Nav links hover animation */
 header nav ul li a:hover {
     color: var(--color-dark-gray-blue);
     background: var(--color-white);
     transform: scale(1.1);
 }
 
+/* Underline nav link for current page */
 header nav ul.current-location {
     box-shadow: 0 0.1rem 0 0 var (var(--color-white));
 }
 
+/* Hide the 'Join' CTA at end of menu on mobile devices */
+header nav div > a {
+    display: none;
+}
 
 /* Hamburger button */
 header button {
@@ -234,36 +274,12 @@ header button {
     font-size: 0;
 }
 
-/* Header CTA mobile only
-    End banner CTA */
-header > div:first-of-type,
-section:last-of-type {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    padding: 1rem 0;
-}
-
-/* Header CTA mobile only */
+/* Banner, mobile devices only, between nav menu and header image */
 header > div:first-of-type {
     margin-top: calc(7vw + 2.5rem);
 }
 
-header > div:first-of-type a,
-section:last-of-type a {
-    background: var(--color-very-dark-orange);
-    text-align: center;
-    width: 40%;
-    height: fit-content;
-    padding: 0.25rem 0;
-}
-
-header > div:first-of-type a:hover {
-    text-decoration: underline;
-}
-
-/* Banner with slogan and Find Us CTA removed from mobile devices */
+/* Banner below header image remove from mobile devices */
 header > div:last-of-type {
     display: none;
 }
@@ -276,15 +292,7 @@ header > img {
 
 /* #region main content */
 
-main section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: flex-start;
-    width: 100%;
-    text-align: center;
-}
-
+main section,
 section > article {
     display: flex;
     flex-direction: column;
@@ -294,6 +302,7 @@ section > article {
     text-align: center;
 }
 
+/* Hide side bar on mobile devices */
 section aside {
     display: none;
 }
@@ -331,3 +340,73 @@ footer {
 }
 
 /* #endregion main content */
+
+/* #region Media queries */
+
+/* 320px */
+@media all and (min-width: 20rem) {
+
+    /* Chris Coyier 2019 Simplified Fluid Typography CSS-Tricks
+    URL [https://css-tricks.com/simplified-fluid-typography] Accessed 14/12/2022 */
+    html {
+        font-size: calc(1rem + 6 * ((100vw - 20rem) / 680));
+    }
+}
+
+/* 1000px */
+@media all and (min-width: 62.5rem) {
+
+        /* This is required to offset the scroll when a
+    menu link is clicked dues to the fixed header */
+    html {
+        /* scroll-padding-top: 4.8rem; */
+        font-size: 1.4rem;
+    }
+
+    header nav div {
+        display: inline-block;
+        position: relative;
+    }
+
+    /* Hide menu button on desktop */
+    header button {
+        display: none;
+    }
+
+    /* Primary navigation */
+    header nav ul {
+        flex: 0.2 0 35.5rem;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        right: 0;
+        top: 0;
+        margin: 0;
+    }
+
+    header nav ul li {
+        width: fit-content;
+    }
+
+    /* Show the 'Join' CTA at end of menu on desktop devices */
+    header nav div > a {
+        display: inline-block;
+    }
+
+    header > div:last-of-type {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Hide header CTA mobile only */
+    header > div:first-of-type {
+        display: none;
+    }
+
+}
+
+/* #endregion Media queries */
