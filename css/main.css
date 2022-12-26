@@ -163,6 +163,7 @@ h2 {
          width: 40%;
          height: fit-content;
          padding: 0.25rem 0;
+         font-weight: bold;
      }
 
      /* CTAs, underline on hover */
@@ -305,6 +306,12 @@ section > article {
 /* Hide side bar on mobile devices */
 section aside {
     display: none;
+}
+
+section article div {
+    display: grid;
+    gap: 3%;
+    /* grid-template-columns: 1fr 1fr 1fr; */
 }
 
 section article article {
