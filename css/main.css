@@ -1,6 +1,6 @@
 /* CSS is written for mobile first design */
 
-/* #region normalization */
+/* #region Normalization */
 
 /***
     The new CSS reset - version 1.7.3 (last updated 7.8.2022)
@@ -86,7 +86,7 @@ meter {
     -webkit-user-drag: element;
 }
 
-/* #endregion normalization */
+/* #endregion Normalization */
 
 /* #region Common */
 
@@ -165,7 +165,7 @@ h2 {
 
 /* #endregion Common */
 
-/* #region header */
+/* #region Header */
 
 /* Fixed navigation banner */
 header nav {
@@ -274,13 +274,14 @@ header > aside:last-of-type {
     display: none;
 }
 
+/* TODO Fix header image */
 header > img {
     /* border: 1px solid green; */
 }
 
-/* #endregion header */
+/* #endregion Header */
 
-/* #region main content */
+/* #region Main content */
 
 main section,
 section > article {
@@ -335,7 +336,7 @@ footer {
     background: var(--color-gray-blue);
 }
 
-/* #endregion main content */
+/* #endregion Main content */
 
 /* #region Media queries */
 
