@@ -139,8 +139,8 @@ h2 {
 
 /* Banner, mobile devices only, between nav menu and header image,
     Banner above footer */
-    header > div:first-of-type,
-    section:last-of-type {
+    header > aside,
+    main > aside {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -154,10 +154,7 @@ h2 {
     in banner, desktop only, below header image,
     in banner above footer
      */
-     header nav div > a,
-     header > div:first-of-type a,
-     header > div:last-of-type a,
-     section:last-of-type a {
+     aside a {
          background: var(--color-very-dark-orange);
          text-align: center;
          width: 40%;
@@ -167,10 +164,7 @@ h2 {
      }
 
      /* CTAs, underline on hover */
-     header nav div > a:hover,
-     header > div:first-of-type a:hover,
-     header > div:last-of-type a:hover,
-     section:last-of-type a:hover {
+     aside a:hover {
          text-decoration: underline;
      }
 
