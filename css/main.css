@@ -139,7 +139,7 @@ h2 {
 
 /* Banner, mobile devices only, between nav menu and header image,
     Banner above footer */
-    header > aside,
+    header > aside:first-of-type,
     main > aside {
         display: flex;
         justify-content: space-around;
@@ -195,7 +195,7 @@ header nav > a img {
     height: 100%;
 }
 
-/* Make 'Home' text invisible but still accessible to screen readers */
+/* Make logo 'Home' text invisible but still accessible to screen readers */
 /* Font size set to 0 so as not to change focus ring */
 header nav > a p {
     font-size: 0;
@@ -246,7 +246,7 @@ header nav ul.current-location {
 }
 
 /* Hide the 'Join' CTA at end of menu on mobile devices */
-header nav div > a {
+header nav aside a {
     display: none;
 }
 
@@ -265,12 +265,12 @@ header button {
 }
 
 /* Banner, mobile devices only, between nav menu and header image */
-header > div:first-of-type {
+header > aside:first-of-type {
     margin-top: calc(7vw + 2.5rem);
 }
 
 /* Banner below header image remove from mobile devices */
-header > div:last-of-type {
+header > aside:last-of-type {
     display: none;
 }
 
