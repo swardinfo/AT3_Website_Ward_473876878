@@ -148,12 +148,7 @@ h2 {
         padding: 1rem 0;
     }
 
-/* CTAs
-    at end of menu,
-    in banner, mobile devices only, between nav menu and header image,
-    in banner, desktop only, below header image,
-    in banner above footer
-     */
+/* CTAs */
      aside a {
          background: var(--color-very-dark-orange);
          text-align: center;
@@ -187,14 +182,14 @@ header nav {
 }
 
 /* Home logo link */
-header nav a {
+header nav > a {
     display: inline-block;
     width: calc(7vw + 8rem);
     /* padding: 0.5rem 0; */
 }
 
 /* Logo */
-header nav a img {
+header nav > a img {
     display: block;
     width: 100%;
     height: 100%;
@@ -202,7 +197,7 @@ header nav a img {
 
 /* Make 'Home' text invisible but still accessible to screen readers */
 /* Font size set to 0 so as not to change focus ring */
-header nav a p {
+header nav > a p {
     font-size: 0;
     color: transparent;
 }
