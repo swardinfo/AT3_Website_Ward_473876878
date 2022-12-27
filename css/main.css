@@ -307,6 +307,10 @@ section > p {
     margin-bottom: 2rem;
 }
 
+section article {
+    margin-bottom: 2rem;
+}
+
 section article div {
     display: grid;
 }
