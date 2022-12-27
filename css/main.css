@@ -136,6 +136,10 @@ h2 {
     font-size: var(--font-size-very-large);
 }
 
+h3 {
+    font-size: var(--font-size-large);
+}
+
 
 /* Banner, mobile devices only, between nav menu and header image,
     Banner above footer */
@@ -291,6 +295,7 @@ section > article {
     align-content: flex-start;
     width: 100%;
     text-align: center;
+    padding: 1rem 0;
 }
 
 /* Hide side bar on mobile devices */
@@ -298,14 +303,17 @@ section aside {
     display: none;
 }
 
-section article div {
-    display: grid;
-    gap: 3%;
-    /* grid-template-columns: 1fr 1fr 1fr; */
+section > p {
+    margin-bottom: 2rem;
 }
 
-section article article {
-    padding: 1rem 0;
+section article div {
+    display: grid;
+}
+
+section article div > a,
+section article div > figure {
+    margin: 1rem 0;
 }
 
 figcaption {
@@ -317,14 +325,19 @@ figcaption blockquote {
 }
 
 /* End banner */
-section:last-of-type {
+main > aside {
     width: 100%;
     background-color: var(--color-warm-gray);
 }
 
-section:last-of-type p {
-    padding-bottom: 1rem;
+img[src$=".svg"] {
+    width: 20%;
 }
+
+
+/* #endregion Main content */
+
+/* #region Footer */
 
 footer {
     display: flex;
@@ -336,7 +349,7 @@ footer {
     background: var(--color-gray-blue);
 }
 
-/* #endregion Main content */
+/* #endregion Footer */
 
 /* #region Media queries */
 
