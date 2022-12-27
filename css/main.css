@@ -180,7 +180,7 @@ header nav {
     left: 0;
     top: 0;
     width: 100%;
-    height: calc((7vw + 2.5rem));
+    height: 4rem;
     padding: 0.1rem 1.3rem;
     background: var(--color-gray-blue);
 }
@@ -188,7 +188,7 @@ header nav {
 /* Home logo link */
 header nav > a {
     display: inline-block;
-    width: calc(7vw + 8rem);
+    width: 9rem;
     /* padding: 0.5rem 0; */
 }
 
@@ -211,7 +211,7 @@ header nav div {
     display: none;
     position: fixed;
     right: 0;
-    top: calc(7vw + 2.5rem);
+    top: 4rem;
     width: 50%;
     background: var(--color-dark-gray-blue);
 }
@@ -258,8 +258,8 @@ header nav aside a {
 header button {
     display: inline-block;
     position: relative;
-    width: calc(7vw + 0.5rem);
-    height: calc(7vw + 0.5rem);
+    width: 1.9rem;
+    height: 1.9rem;
     overflow: hidden;
     background: url("/images/menu-button-open-icon.svg");
     background-size: cover;
@@ -270,7 +270,7 @@ header button {
 
 /* Banner, mobile devices only, between nav menu and header image */
 header > aside:first-of-type {
-    margin-top: calc(7vw + 2.5rem);
+    margin-top: 4rem;
 }
 
 /* Banner below header image remove from mobile devices */
@@ -365,6 +365,10 @@ footer {
     html {
         font-size: calc(1rem + 6 * ((100vw - 20rem) / 680));
     }
+
+    header nav {
+
+    }
 }
 
 /* 1000px */
@@ -376,6 +380,8 @@ footer {
         /* scroll-padding-top: 4.8rem; */
         font-size: 1.4rem;
     }
+
+
 
     header nav div {
         display: inline-block;
