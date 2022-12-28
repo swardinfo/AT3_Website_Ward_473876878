@@ -131,6 +131,8 @@ legend{
 h1 {
     font-size: var(--font-size-extra-large);
     text-align: center;
+    position: relative;
+    top: 19rem;
 }
 
 h2 {
@@ -199,7 +201,6 @@ header nav > a {
 header nav > a img {
     display: block;
     width: 100%;
-    height: 100%;
 }
 
 /* Make logo 'Home' text invisible but still accessible to screen readers */
@@ -261,8 +262,7 @@ header nav aside {
 header button {
     display: inline-block;
     position: relative;
-    width: 1.9rem;
-    height: 1.9rem;
+    padding: 1.3rem 1.3rem;
     overflow: hidden;
     background: url("/images/menu-button-open-icon.svg");
     background-size: cover;
@@ -276,17 +276,21 @@ header > aside:first-of-type {
     margin-top: 4rem;
 }
 
+/* Header image */
+header section {
+    background: var(--color-white);
+    background-image: url("../images/home-header-image.jpg");
+    height: 18rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 0%;
+    margin-bottom: 4rem;
+}
+
 /* Banner below header image remove from mobile devices */
 header > aside:last-of-type {
     display: none;
-}
-
-/* TODO Fix header image */
-header > img {
-    height: 18rem;
-    width: 100%;
-    object-fit: cover;
-    object-position: 50% 0%;
 }
 
 /* #endregion Header */
@@ -309,7 +313,8 @@ section aside {
     display: none;
 }
 
-article > p {
+article > p,
+section aside p {
     margin-bottom: 1rem;
 }
 
@@ -354,7 +359,7 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 4rem;
+    padding: 1.3rem 0;
     color: #fff;
     background: var(--color-dark-gray-blue);
 }
@@ -429,30 +434,39 @@ footer {
 
     header > img {
         margin-top: 4rem;
-        height: 18rem;
+        height: 22rem;
         background: var(--color-white);
-        border-left: 50vw solid var(--color-white);
+        /* border-left: 50vw solid var(--color-white); */
         margin-bottom: -3.5rem;
     }
 
+    /* Header image */
+    header section {
+        background-image: url("../images/home-header-image-extended.jpg");
+        height: 22rem;
+        background-position: 70% 0%;
+        margin-top: 4rem;
+        margin-bottom: 0;
+    }
+
+    /* Move title to left of header image */
     h1 {
-        display: inline;
-        position: relative;
-        left: 2rem;
-        top: -6.5rem;
-        left: calc(25vw - 9rem);
-        color: var(--color-black);
-        margin-bottom: -10rem;
+        width: 45%;
+        top: 9rem;
     }
 
     header > aside:last-of-type {
         display: flex;
         flex-wrap: nowrap;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         padding: 1rem 0;
         color: var(--color-white);
         background: var(--color-dark-gray-blue);
+    }
+
+    header > aside:last-of-type p {
+        padding-right: 2rem;
     }
 
     main section {
@@ -473,6 +487,7 @@ footer {
         display: inline-block;
         flex: 1;
         border: 1px solid green;
+        padding: 1rem 0;
     }
 
     section article div {
