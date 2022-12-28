@@ -249,8 +249,11 @@ header nav ul li a:hover {
 }
 
 /* Underline nav link for current page */
-header nav ul.current-location {
-    box-shadow: 0 0.1rem 0 0 var (var(--color-white));
+#training nav ul a[href="../html/training.html"],
+#memberships nav ul a[href="../html/memberships.html"],
+#about nav ul a[href="../html/about.html"],
+#contact nav ul a[href="../html/contact.html"] {
+    box-shadow: 0 0.1rem 0 0 var(--color-white);
 }
 
 /* Hide the 'Join' CTA at end of menu on mobile devices */
