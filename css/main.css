@@ -276,15 +276,39 @@ header > aside:first-of-type {
     margin-top: 4rem;
 }
 
+/* Header image for Home page */
+#home header section {
+    background-image: url("../images/home-header-image.jpg");
+}
+
+/* Header image for Training page */
+#training header section {
+    background-image: url("../images/training-header-image.jpg");
+}
+
+/* Header image for Memberships page */
+#memberships header section {
+    background-image: url("../images/memberships-header-image.jpg");
+}
+
+/* Header image for About page */
+#about header section {
+    background-image: url("../images/about-header-image.jpg");
+}
+
+/* Header image for Contact page */
+#contact header section {
+    background-image: url("../images/contact-header-image.jpg");
+}
+
 /* Header image */
 header section {
     background: var(--color-white);
-    background-image: url("../images/home-header-image.jpg");
     height: 18rem;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50% 0%;
+    background-position: 100% 0%;
     margin-bottom: 4rem;
 }
 
@@ -440,9 +464,32 @@ footer {
         margin-bottom: -3.5rem;
     }
 
+    /* Header image for Home page */
+    #home header section {
+        background-image: url("../images/home-header-image-extended.jpg");
+    }
+
+    /* Header image for Training page */
+    #training header section {
+        background-image: url("../images/training-header-image-extended.jpg");
+    }
+
+    /* Header image for Memberships page */
+    #memberships header section {
+        background-image: url("../images/memberships-header-image-extended.jpg");
+    }
+
+    /* Header image for About page */
+    #about header section {
+        background-image: url("../images/about-header-image-extended.jpg");
+    }
+
+    /* Header image for Contact page */
+    #contact header section {
+        background-image: url("../images/contact-header-image-extended.jpg");
+    }
     /* Header image */
     header section {
-        background-image: url("../images/home-header-image-extended.jpg");
         height: 22rem;
         background-position: 70% 0%;
         margin-top: 4rem;
