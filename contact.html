@@ -43,139 +43,109 @@
         <!-- #endregion Header -->
         <main>
             <!-- Full width on mobile, 80% width on desktop -->
-            <section>
-                <!-- #region Main content -->
+            <!-- #region Main content -->
+            <section id="contact-form">
+                <h2>Contact</h2>
+                <article>
+                    <form>
+                        <h3>Contact us ...</h3>
+                        <fieldset>
+                            <legend>Contact form</legend>
+                            <p>*Denotes required information</p>
+                            <label for="name">
+                                *Full Name:
+                                <input id="name" type="text" name="name" placeholder="Full Name" required>
+                            </label>
+                            <label for="email">
+                                *Email:
+                                <input id="email" type="email" name="email" placeholder="Email" required>
+                            </label>
+                            <label for="tel">
+                                *Phone:
+                                <input id="tel" type="tel" name="tel" placeholder="Phone" required>
+                            </label>
+                            <label for="message">
+                                *Message
+                                <textarea id="message" name="message" placeholder="Message"
+                                    maxlength="600"></textarea>
+                            </label>
+                            <label for="goals">
+                                Goals:
+                                <input id="goals" type="text" name="goals" placeholder="Goals" required>
+                            </label>
+                            <fieldset>
+                                <legend>Preferred contact method</legend>
+                                <label for="email-contact"><input id="email-contact" type="radio" name="contact-method" value="0" checked> Email</label>
+                                <label for="phone-contact"><input id="phone-contact" type="radio" name="contact-method" value="1" > Phone</label>
+                            </fieldset>
+                            <label for="contact-me">
+                                <input id="contact-me" type="checkbox" name="contact-me" value="checked">
+                                *Contact me
+                            </label>
+                            <button id="submit" type="submit" formaction="#">Submit</button>
+                        </fieldset>
+                    </form>
+                </article>
                 <!-- Div for styling only -->
-                <div>
+                <article id="locations">
+                    <h3>Our locations.</h3>
                     <article>
-                        <h2>Train with us.</h2>
-                        <p>Achieve your goals.</p>
-                        <!-- Div for styling only -->
-                        <div>
-                            <a href="./training.html">
-                                <figure>
-                                    <img src="./images/man-doing-push-ups-using-yellow-kettlebell.jpg" alt="man looking serious at camera doing push ups using yellow kettlebell">
-                                    <figcaption>
-                                        Serious about training?
-                                        <blockquote>
-                                            <!-- TODO Replace this for final production release -->
-                                            We're here to help.
-                                        </blockquote>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                            <a href="./memberships.html">
-                                <figure>
-                                    <img src="./images/man-on-treadmill.jpg" alt="man on a treadmill in a gym">
-                                    <figcaption>
-                                        Our membership options.
-                                        <blockquote>
-                                            <!-- TODO Replace this for final production release -->
-                                            Click here to find out more.
-                                        </blockquote>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                            <a href="./about.html">
-                                <figure>
-                                    <img src="./images/happy-sportswoman-stretching-legs-on-floor-with-trainer.jpg" alt="happy sportswoman stretching legs on floor with trainer">
-                                    <figcaption>
-                                        A little bit about us.
-                                        <blockquote>
-                                            <!-- TODO Replace this for final production release -->
-                                            Meet our team.
-                                        </blockquote>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                            <a href="./contact.html">
-                                <figure>
-                                    <img src="./images/athlete-man-in-red-tank-top-sitting-on-floor.jpg" alt="happy sportswoman stretching legs on floor with trainer">
-                                    <figcaption>
-                                        Want to know more?
-                                        <blockquote>
-                                            <!-- TODO Replace this for final production release -->
-                                            Contact us.
-                                        </blockquote>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
+                        <h4>Ashgrove</h4>
+                        <img src="./images/maps-pin-icon.svg" alt="">
+                        <p>1 Ashgrove St, Ashgrove QLD, 4999</p>
+                        <img src="./images/phone-icon.svg" alt="">
+                        <p> (07) 1111 1111</p>
+                        <img src="./images/envelope-icon.svg" alt="">
+                        <p>ashgrove@mlstregth.com.au</p>
+                        <a href="#contact-form">Contact Us</a>
+                        <a href="memberships.html#offers">Join</a>
                     </article>
                     <article>
-                        <h2>Amenities</h2>
-                        <p>What your membership gives you.</p>
-                        <!-- Div for styling only -->
-                        <div>
-                            <figure>
-                                <img src="./images/access-24-hour-icon.svg" alt="clock with tick icon">
-                                <figcaption>
-                                    24 Hour Access
-                                </figcaption>
-                            </figure>
-                            <figure>
-                                <img src="./images/cardio-equipment-icon.svg" alt="bicycle machine icon">
-                                <figcaption>
-                                    Cardio Equipment
-                                </figcaption>
-                            </figure>
-                            <figure>
-                                <img src="./images/weight-training-icon.svg" alt="dumbbell icon">
-                                <figcaption>
-                                    Weight Training
-                                </figcaption>
-                            </figure>
-                            <figure>
-                                <img src="./images/strength-training-icon.svg" alt="flexed anr muscles icon">
-                                <figcaption>
-                                    Strength Training
-                                </figcaption>
-                            </figure>
-                            <figure>
-                                <img src="./images/aqua-fit-icon.svg" alt="pool ladder icon">
-                                <figcaption>
-                                    Aqua fit
-                                </figcaption>
-                            </figure>
-                            <figure>
-                                <img src="./images/body-step-icon.svg" alt="foot walking icon">
-                                <figcaption>
-                                    Body step
-                                </figcaption>
-                            </figure>
-                            <figure>
-                                <img src="./images/chi-ball-icon.svg" alt="ball icon">
-                                <figcaption>
-                                    Chi ball
-                                </figcaption>
-                            </figure>
-                            <figure>
-                                <img src="./images/boxing-glove-icon.svg" alt="single boxing glove icon">
-                                <figcaption>
-                                    Boxing
-                                </figcaption>
-                            </figure>
-                        </div>
+                        <h4>Brisbane City</h4>
+                        <img src="./images/maps-pin-icon.svg" alt="">
+                        <p>1 Brisbane St, Brisbane City QLD, 4999</p>
+                        <img src="./images/phone-icon.svg" alt="">
+                        <p> (07) 2222 2222</p>
+                        <img src="./images/envelope-icon.svg" alt="">
+                        <p>brisbane@mlstregth.com.au</p>
+                        <a href="#contact-form">Contact Us</a>
+                        <a href="memberships.html#offers">Join</a>
                     </article>
-                </div>
+                    <article>
+                        <h4>Chermside</h4>
+                        <img src="./images/maps-pin-icon.svg" alt="">
+                        <p>1 Chermside St, Chermside QLD, 4999</p>
+                        <img src="./images/phone-icon.svg" alt="">
+                        <p> (07) 3333 3333</p>
+                        <img src="./images/envelope-icon.svg" alt="">
+                        <p>chermside@mlstregth.com.au</p>
+                        <a href="#contact-form">Contact Us</a>
+                        <a href="memberships.html#offers">Join</a>
+                    </article>
+                    <article>
+                        <h4>Graceville</h4>
+                        <img src="./images/maps-pin-icon.svg" alt="">
+                        <p>1 Graceville St, Graceville QLD, 4999</p>
+                        <img src="./images/phone-icon.svg" alt="">
+                        <p> (07) 4444 4444</p>
+                        <img src="./images/envelope-icon.svg" alt="">
+                        <p>graceville@mlstregth.com.au</p>
+                        <a href="#contact-form">Contact Us</a>
+                        <a href="memberships.html#offers">Join</a>
+                    </article>
+                    <article>
+                        <h4>Westlake</h4>
+                        <img src="./images/maps-pin-icon.svg" alt="">
+                        <p>1 Westlake St, Westlake QLD, 4999</p>
+                        <img src="./images/phone-icon.svg" alt="">
+                        <p> (07) 5555 5555</p>
+                        <img src="./images/envelope-icon.svg" alt="">
+                        <p>westlake@mlstregth.com.au</p>
+                        <a href="#contact-form">Contact Us</a>
+                        <a href="memberships.html#offers">Join</a>
+                    </article>
+                </article>
                 <!-- #endregion Main content -->
-                <!-- #region Sidebar -->
-                <!-- Desktop only -->
-                <aside>
-                    <h2>Gallery</h2>
-                    <p>Our gym</p>
-                    <!-- TODO replace placeholder -->
-                    <img src="./images/asian-man-exercising-with-dumbbell-in-gym.jpg" alt="placeholder">
-                    <!-- TODO replace placeholder -->
-                    <img src="./images/treadmills-in-a-gym.jpg" alt="placeholder">
-                    <!-- TODO replace placeholder -->
-                    <img src="./images/a-young-woman-holding-a-yoga-mat.jpg" alt="placeholder">
-                    <!-- TODO replace placeholder -->
-                    <img src="./images/serious-sportsman-training-on-exercise-machine-in-modern-gym.jpg" alt="placeholder">
-                    <!-- TODO replace placeholder -->
-                    <img src="./images/focused-young-asian-woman-climber-ascending-wall-in-modern-gym.jpg" alt="placeholder">
-                </aside>
-                <!-- #endregion Sidebar -->
             </section>
             <!-- #region End banner -->
             <!-- Full width CTA banner -->

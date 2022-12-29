@@ -106,6 +106,7 @@ meter {
 
 html {
     font-size: 16px;
+    scroll-padding-top: 4rem;
 }
 
 /* Common styling is placed in the all selector as placing it
