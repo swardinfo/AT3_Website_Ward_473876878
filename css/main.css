@@ -336,13 +336,7 @@ section > article {
     padding: 1rem 0;
 }
 
-/* Hide side bar on mobile devices */
-section aside {
-    display: none;
-}
-
-article > p,
-section aside p {
+article > p {
     margin-bottom: 1rem;
 }
 
@@ -358,14 +352,18 @@ figcaption {
     padding: 0.5rem 0;
 }
 
+section article:first-of-type img {
+    width: 100%;
+}
+
 figcaption blockquote {
     text-align: center;
 }
 
 /* Article icons */
 article img[src$=".svg"] {
-    height: 5rem;
-    margin-top: 3rem;
+    width: 25%;
+    margin-top: 4rem;
 }
 
 /* End banner */
@@ -389,6 +387,12 @@ footer {
 }
 
 /* #endregion Footer */
+
+/* #region Page specific */
+
+
+
+/* #endregion Page specific */
 
 /* #region Media queries */
 
@@ -518,45 +522,30 @@ footer {
 
     /* Main content */
     main section {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        column-gap: 5%;
         width: 80%;
         margin: auto;
-        padding: 2rem 0;
-
-    }
-
-    /* Side bar */
-    section aside {
-        display: block;
-    }
-
-    /* Side bar image */
-    section aside img {
-        display: block;
-        height: 100%;
     }
 
     /* Main content article */
     section article div {
         display: grid;
         column-gap: 5%;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto;
         grid-auto-flow: row;
         grid-auto-rows: 1fr;
     }
 
-
     section article a img {
+        min-height:  10rem;
         object-fit: cover;
         object-position: center;
     }
 
     /* Amenities icons */
     article img[src$=".svg"] {
-        width: 30%;
+        height: 30%;
+        width: auto;
     }
 }
 
