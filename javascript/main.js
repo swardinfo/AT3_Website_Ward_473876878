@@ -1,15 +1,21 @@
-const currentLocation = window.location;
 const mediaQuery = window.matchMedia("(min-width: 1000px)");
 const menuButton = document.querySelector("#menu-button");
 const menu = document.querySelector("#menu");
-const listItems = menu.querySelectorAll("li");
+// const temp = document.querySelector("#home");
+
 
 /**
  * Imports external menu and footer HTML into a page
  */
 $(document).ready(function(){
-    $( "#menu" ).load( "/html/menu.html" );
-    $( "footer" ).load( "/html/footer.html" );
+    // if (document.querySelector("#home") != null )
+    // {
+    //     $( "#menu" ).load( "./html/menu.html" );
+    //     $( "footer" ).load( "./html/footer.html" );
+    //     return;
+    // }
+    $( "#menu" ).load( "menu.html" );
+    $( "footer" ).load( "footer.html" );
  });
 
 /**
@@ -17,12 +23,6 @@ $(document).ready(function(){
  */
 window.addEventListener("load", function() {
     handleScreenSizeChange(mediaQuery);
-    listItems.forEach(item => {
-        item.classList.remove("current-location");
-        if(item.contains(currentLocation.pathname)) {
-            item.classList.add("current-location");
-        }
-    });
 }, {once: true});
 
 /**

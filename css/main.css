@@ -249,10 +249,10 @@ header nav ul li a:hover {
 }
 
 /* Underline nav link for current page */
-#training nav ul a[href="../html/training.html"],
-#memberships nav ul a[href="../html/memberships.html"],
-#about nav ul a[href="../html/about.html"],
-#contact nav ul a[href="../html/contact.html"] {
+#training nav ul a[href="training.html"],
+#memberships nav ul a[href="memberships.html"],
+#about nav ul a[href="about.html"],
+#contact nav ul a[href="contact.html"] {
     box-shadow: 0 0.1rem 0 0 var(--color-white);
 }
 
@@ -267,7 +267,7 @@ header button {
     position: relative;
     padding: 1.3rem 1.3rem;
     overflow: hidden;
-    background: url("/images/menu-button-open-icon.svg");
+    background: url("../images/menu-button-open-icon.svg");
     background-size: cover;
     border: none;
     color: transparent;
