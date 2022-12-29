@@ -390,7 +390,14 @@ footer {
 
 /* #region Page specific */
 
-
+#contact fieldset {
+    display: grid;
+    column-gap: 5%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    grid-auto-rows: 1fr;
+}
 
 /* #endregion Page specific */
 

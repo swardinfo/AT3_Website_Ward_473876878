@@ -52,36 +52,25 @@
                         <fieldset>
                             <legend>Contact form</legend>
                             <p>*Denotes required information</p>
-                            <label for="name">
-                                *Full Name:
-                                <input id="name" type="text" name="name" placeholder="Full Name" required>
-                            </label>
-                            <label for="email">
-                                *Email:
+                            <label for="name">*Full Name:</label>
+                            <input id="name" type="text" name="name" placeholder="Full Name" required>
+                            <label for="email">*Email:</label>
                                 <input id="email" type="email" name="email" placeholder="Email" required>
-                            </label>
-                            <label for="tel">
-                                *Phone:
-                                <input id="tel" type="tel" name="tel" placeholder="Phone" required>
-                            </label>
-                            <label for="message">
-                                *Message
-                                <textarea id="message" name="message" placeholder="Message"
-                                    maxlength="600"></textarea>
-                            </label>
-                            <label for="goals">
-                                Goals:
-                                <input id="goals" type="text" name="goals" placeholder="Goals" required>
-                            </label>
+                            <label for="tel">*Phone:</label>
+                            <input id="tel" type="tel" name="tel" placeholder="Phone" required>
+                            <label for="message">*Message</label>
+                            <textarea id="message" name="message" placeholder="Message" maxlength="600"></textarea>
+                            <label for="goals">Goals:</label>
+                            <input id="goals" type="text" name="goals" placeholder="Goals" required>
                             <fieldset>
                                 <legend>Preferred contact method</legend>
-                                <label for="email-contact"><input id="email-contact" type="radio" name="contact-method" value="0" checked> Email</label>
-                                <label for="phone-contact"><input id="phone-contact" type="radio" name="contact-method" value="1" > Phone</label>
+                                <label for="email-contact"> Email</label>
+                                <input id="email-contact" type="radio" name="contact-method" value="0" checked>
+                                <label for="phone-contact"> Phone</label>
+                                <input id="phone-contact" type="radio" name="contact-method" value="1" >
                             </fieldset>
-                            <label for="contact-me">
-                                <input id="contact-me" type="checkbox" name="contact-me" value="checked">
-                                *Contact me
-                            </label>
+                            <label for="contact-me">*Contact me</label>
+                            <input id="contact-me" type="checkbox" name="contact-me" value="checked">
                             <button id="submit" type="submit" formaction="#">Submit</button>
                         </fieldset>
                     </form>
