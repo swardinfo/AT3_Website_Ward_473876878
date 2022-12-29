@@ -1,19 +1,11 @@
 const mediaQuery = window.matchMedia("(min-width: 1000px)");
 const menuButton = document.querySelector("#menu-button");
 const menu = document.querySelector("#menu");
-// const temp = document.querySelector("#home");
-
 
 /**
  * Imports external menu and footer HTML into a page
  */
 $(document).ready(function(){
-    // if (document.querySelector("#home") != null )
-    // {
-    //     $( "#menu" ).load( "./html/menu.html" );
-    //     $( "footer" ).load( "./html/footer.html" );
-    //     return;
-    // }
     $( "#menu" ).load( "menu.html" );
     $( "footer" ).load( "footer.html" );
  });

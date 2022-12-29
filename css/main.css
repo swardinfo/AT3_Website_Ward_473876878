@@ -349,9 +349,8 @@ section article div {
     display: grid;
 }
 
-section article div > a,
-section article div > figure {
-    margin: 1rem 0;
+section article div > a {
+    margin-bottom: 2rem;
 }
 
 figcaption {
@@ -362,13 +361,10 @@ figcaption blockquote {
     text-align: center;
 }
 
-article img[src$=".jpg"] {
-    width: 100%;
-}
-
 /* Article icons */
 article img[src$=".svg"] {
-    width: 6rem;
+    height: 5rem;
+    margin-top: 3rem;
 }
 
 /* End banner */
@@ -504,6 +500,7 @@ footer {
         top: 9rem;
     }
 
+    /* Banner with slogan and Find Us CTA */
     header > aside:last-of-type {
         display: flex;
         flex-wrap: nowrap;
@@ -518,41 +515,48 @@ footer {
         padding-right: 2rem;
     }
 
+    /* Main content */
     main section {
-    flex-direction: row;
-    width: 80%;
-    margin: auto;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        column-gap: 5%;
+        width: 80%;
+        margin: auto;
+        padding: 2rem 0;
 
-    padding: 1rem 0;
     }
 
-    section > div {
-        flex: 3;
-        padding: 1rem;
-        border: 1px solid red;
-    }
-
+    /* Side bar */
     section aside {
-        display: inline-block;
-        flex: 1;
-        border: 1px solid green;
-        padding: 1rem 0;
+        display: block;
     }
 
+    /* Side bar image */
+    section aside img {
+        display: block;
+        height: 100%;
+    }
+
+    /* Main content article */
     section article div {
         display: grid;
-        column-gap: 3%;
+        column-gap: 5%;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
         grid-auto-flow: row;
-        place-items: center;
+        grid-auto-rows: 1fr;
     }
 
-    /* Article icons */
+
+    section article a img {
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Amenities icons */
     article img[src$=".svg"] {
-        width: 50%;
+        width: 30%;
     }
-
 }
 
 /* #endregion Media queries */

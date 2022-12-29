@@ -9,6 +9,7 @@
         <script defer src="./javascript/jquery-3.6.2.js"></script>
         <script defer src="./javascript/main.js"></script>
     </head>
+    <!-- ID required to identify current page -->
     <body id="home">
         <!-- #region Header -->
         <header>
@@ -40,6 +41,7 @@
             </aside>
         </header>
         <!-- #endregion Header -->
+
         <main>
             <!-- Full width on mobile, 80% width on desktop -->
             <section>
@@ -67,10 +69,10 @@
                                 <figure>
                                     <img src="./images/man-on-treadmill.jpg" alt="man on a treadmill in a gym">
                                     <figcaption>
-                                        Our membership options.
+                                        Membership options.
                                         <blockquote>
                                             <!-- TODO Replace this for final production release -->
-                                            Click here to find out more.
+                                            Find out more.
                                         </blockquote>
                                     </figcaption>
                                 </figure>
@@ -101,7 +103,8 @@
                             </a>
                         </div>
                     </article>
-                    <article>
+                    <!-- Link target -->
+                    <article id="amenities">
                         <h2>Amenities</h2>
                         <p>What your membership gives you.</p>
                         <!-- Div for styling only -->
@@ -158,25 +161,24 @@
                     </article>
                 </div>
                 <!-- #endregion Main content -->
+
                 <!-- #region Sidebar -->
                 <!-- Desktop only -->
                 <aside>
                     <h2>Gallery</h2>
                     <p>Our gym</p>
-                    <!-- TODO replace placeholder -->
-                    <img src="./images/asian-man-exercising-with-dumbbell-in-gym.jpg" alt="placeholder">
-                    <!-- TODO replace placeholder -->
-                    <img src="./images/treadmills-in-a-gym.jpg" alt="placeholder">
-                    <!-- TODO replace placeholder -->
-                    <img src="./images/a-young-woman-holding-a-yoga-mat.jpg" alt="placeholder">
-                    <!-- TODO replace placeholder -->
-                    <img src="./images/serious-sportsman-training-on-exercise-machine-in-modern-gym.jpg" alt="placeholder">
-                    <!-- TODO replace placeholder -->
-                    <img src="./images/focused-young-asian-woman-climber-ascending-wall-in-modern-gym.jpg" alt="placeholder">
+                    <div>
+                        <img src="./images/a-young-woman-holding-a-yoga-mat.jpg" alt="placeholder">
+                        <img src="./images/asian-man-exercising-with-dumbbell-in-gym.jpg" alt="placeholder">
+                        <img src="./images/woman-in-black-tank-top-and-black-pants-sitting-on-white-hammock.jpg" alt="placeholder">
+                        <img src="./images/man-in-red-shirt-with-prosthetic-leg-stretching.jpg" alt="placeholder">
+                        <img src="./images/focused-young-asian-woman-climber-ascending-wall-in-modern-gym.jpg" alt="placeholder">
+                    </div>
                 </aside>
                 <!-- #endregion Sidebar -->
             </section>
             <!-- #region End banner -->
+
             <!-- Full width CTA banner -->
             <aside>
                 <p>We train athletes</p>
@@ -184,6 +186,8 @@
             </aside>
             <!-- #endregion End banner -->
         </main>
+
+        <!-- Footer imported with JavaScript/Jquery -->
         <footer></footer>
     </body>
 </html>
