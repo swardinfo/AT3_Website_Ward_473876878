@@ -336,24 +336,25 @@ section > article {
     padding: 1rem 0;
 }
 
-article > p {
+section > article {
+    padding-bottom: 3rem;
+}
+
+section article > p {
+    width: 100%;
     margin-bottom: 1rem;
 }
 
-section article div {
-    display: grid;
-}
-
-section article div > a {
+/* Margin added to provide space between links for fat fingers */
+section article div a {
+    display: inline-block;
+    width: 100%;
     margin-bottom: 2rem;
 }
 
-figcaption {
-    padding: 0.5rem 0;
-}
-
-section article:first-of-type img {
+section figure img {
     width: 100%;
+    padding-bottom: 0.5rem;
 }
 
 figcaption blockquote {
@@ -513,17 +514,22 @@ footer {
     }
 
     /* Banner with slogan and Find Us CTA */
-    header > aside:last-of-type {
+    header > aside:last-of-type,
+    main > aside {
         display: flex;
         flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
         padding: 1rem 0;
+    }
+
+    /* Banner with slogan and Find Us CTA */
+    header > aside:last-of-type {
         color: var(--color-white);
         background: var(--color-dark-gray-blue);
     }
 
-    header > aside:last-of-type p {
+    aside p {
         padding-right: 2rem;
     }
 
@@ -533,7 +539,7 @@ footer {
         margin: auto;
     }
 
-    /* Main content article */
+    /* Main content articles */
     section article div {
         display: grid;
         column-gap: 5%;
@@ -551,8 +557,7 @@ footer {
 
     /* Amenities icons */
     article img[src$=".svg"] {
-        height: 30%;
-        width: auto;
+        width: 30%;
     }
 }
 
