@@ -154,7 +154,9 @@ legend {
     font-size: var(--font-size-large);
 }
 
-p {
+/*  */
+p,
+textarea {
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
@@ -163,14 +165,22 @@ p {
 
 /* Banner, mobile devices only, between nav menu and header image,
     Banner above footer */
-    header > aside:first-of-type,
-    main > aside {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 1rem 0;
-        width: 100%;
-    }
+header > aside:first-of-type,
+main > aside {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+/* Default anchor hover style */
+a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+    text-decoration-thickness: 0.1rem;
+}
+
 
 /* CTAs
     Contact form help link */
@@ -182,14 +192,22 @@ p {
          padding: 0.25rem 0;
          color: var(--color-black);
          background: var(--color-very-dark-orange);
+         border-radius: 100vh;
          text-align: center;
          font-weight: bold;
      }
 
      /* CTAs, underline on hover */
-     aside a:hover {
+     /* aside a:hover,
+     #memberships section > article article a:hover,
+     #contact form fieldset a:hover,
+     section a:hover {
          text-decoration: underline;
-     }
+         text-underline-offset: 0.2rem;
+         text-decoration-thickness: 0.1rem;
+     } */
+
+
 
 /* #endregion Common */
 
@@ -262,6 +280,7 @@ header nav ul li a {
 
 /* Nav links hover animation */
 header nav ul li a:hover {
+    text-decoration: none;
     color: var(--color-dark-gray-blue);
     background: var(--color-white);
     transform: scale(1.1);
@@ -426,7 +445,6 @@ footer {
 
 /* #region Memberships page */
 
-
 /* Membership cards */
 #memberships section > article article {
     display: flex;
@@ -434,7 +452,6 @@ footer {
     justify-content: flex-start;
     align-content: center;
     width: 100%;
-    margin: 0 auto 2rem auto;
     border-top: 0.05rem solid var(--color-warm-gray);
     text-align: center;
 }
@@ -454,27 +471,16 @@ footer {
     font-size: var(--font-size-ultra-large);
 }
 
-/* TODO move to media query */
-/* Membership cards */
-#memberships section > article article {
-    width: 80%;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: rgb(0 0 0 / 15%) 0px 0.8rem 1.4rem 0px, rgb(0 0 0 / 15%) 0px 0.1rem 0.2rem 0px;
-}
-
 #memberships section > article article:nth-of-type(1) h2 {
-    background-color: #FFA50080;
+    background-color: #ffa500c0;
 }
 
 #memberships section > article article:nth-of-type(3) h2 {
-    background-color: #FFD700a0;
+    background-color: #ffd700a0;
 }
 
 #memberships section > article article ul {
-    min-height: 14em;
     text-align: left;
-    /* margin: 1rem auto; */
 }
 
 #memberships section > article article img {
@@ -483,13 +489,25 @@ footer {
 }
 
 #memberships section > article article li {
+    list-style-position: outside;
     padding: 0.2rem 0;
+    padding-left: 1.5rem;
+    width: calc(100% - 1rem);
+    background-image: url("../images/information-icon.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+#memberships section > article article p,
+#memberships section > article article strong{
+    margin: 0 auto 0.5rem auto;
 }
 
 #memberships section > article article a {
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 2rem auto;
 }
-
 
 /* #endregion Memberships page */
 
@@ -687,9 +705,6 @@ input:-webkit-autofill:focus {
 #contact form textarea {
     min-height: 6rem;
     max-height: 20rem;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
     resize: vertical;
 }
 
@@ -842,11 +857,6 @@ textarea:focus:invalid {
 #contact article div article a:last-of-type {
     background: var(--color-very-dark-orange);
     outline: 0.5rem solid var(--color-very-dark-orange);
-}
-
-/* Need to create focus ring for accessibility */
-#contact article div article a:hover {
-    text-decoration: underline;
 }
 
 /* Need to create focus ring for accessibility */
@@ -1046,6 +1056,30 @@ textarea:focus:invalid {
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 20px;
         align-items: flex-start;
+    }
+
+    /* Main content articles */
+    #memberships section > article:first-of-type > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 0;
+        align-items: flex-start;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* Membership cards */
+    #memberships section > article article {
+        max-width: 20rem;
+        margin: 0 1rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: #00000026 0 0.8rem 1.4rem 0, #00000026 0 0.1rem 0.2rem 0;
+    }
+
+    #memberships section > article article ul {
+        min-height: 16em;
     }
 }
 
