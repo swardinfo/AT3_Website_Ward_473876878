@@ -101,7 +101,8 @@ meter {
     --font-size-default: 1rem;
     --font-size-large: 1.25rem;
     --font-size-very-large: 1.5rem;
-    --font-size-extra-large: 1.9rem;
+    --font-size-ultra-large: 1.9rem;
+    --font-size-super-large: 3rem;
 }
 
 html {
@@ -119,31 +120,46 @@ html {
     font-weight: normal;
 }
 
+/* Restore keyboard tab focus that is removed by CSS reset */
+:focus {
+    outline: revert;
+    outline-style: revert;
+}
+
 h1,
 h2,
 h3,
 h4,
+strong,
 figcaption,
-legend{
+legend,
+label{
     font-weight: bold;
-    color: var(--color-dark-gray-blue);
 }
 
 h1 {
-    font-size: var(--font-size-extra-large);
-    text-align: center;
     position: relative;
     top: 19rem;
+    font-size: var(--font-size-ultra-large);
+    text-align: center;
 }
 
 h2 {
     font-size: var(--font-size-very-large);
 }
 
-h3 {
+h3,
+strong,
+legend {
     font-size: var(--font-size-large);
 }
 
+p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
 
 /* Banner, mobile devices only, between nav menu and header image,
     Banner above footer */
@@ -152,18 +168,21 @@ h3 {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: 100%;
         padding: 1rem 0;
+        width: 100%;
     }
 
-/* CTAs */
-     aside a {
-         background: var(--color-very-dark-orange);
-         color: var(--color-black);
-         text-align: center;
+/* CTAs
+    Contact form help link */
+     aside a,
+     #memberships section > article article a,
+     #contact form fieldset a {
          width: 8rem;
          height: fit-content;
          padding: 0.25rem 0;
+         color: var(--color-black);
+         background: var(--color-very-dark-orange);
+         text-align: center;
          font-weight: bold;
      }
 
@@ -176,7 +195,7 @@ h3 {
 
 /* #region Header */
 
-/* Fixed navigation banner */
+/* Fixed navigation banner on mobile devices*/
 header nav {
     display: flex;
     justify-content: space-between;
@@ -188,14 +207,13 @@ header nav {
     height: 4rem;
     padding: 0.1rem 1.3rem;
     background: var(--color-dark-gray-blue);
-    z-index: 10;
+    z-index: 300;
 }
 
 /* Home logo link */
 header nav > a {
     display: inline-block;
     width: 9rem;
-    /* padding: 0.5rem 0; */
 }
 
 /* Logo */
@@ -207,22 +225,22 @@ header nav > a img {
 /* Make logo 'Home' text invisible but still accessible to screen readers */
 /* Font size set to 0 so as not to change focus ring */
 header nav > a p {
-    font-size: 0;
     color: transparent;
+    font-size: 0;
 }
 
 /* Initially hide menu links. */
 header nav div {
     display: none;
     position: fixed;
-    right: 0;
     top: 4rem;
+    right: 0;
     width: 50%;
     background: var(--color-dark-gray-blue);
 }
 
 /* Show drop down menu when hamburger button clicked */
-header nav div.menu-open {
+header nav div.show {
     display: inline-block;
 }
 
@@ -236,9 +254,9 @@ header nav ul li a {
     display: inline-block;
     width: 100%;
     padding: 0.5rem;
+    color: var(--color-white);
     text-align: center;
     font-weight: bold;
-    color: var(--color-white);
     transition: transform 0.4s;
 }
 
@@ -265,13 +283,13 @@ header nav aside {
 /* Hamburger button */
 header button {
     display: inline-block;
-    position: relative;
     padding: 1.3rem 1.3rem;
     overflow: hidden;
+    color: transparent;
+    background: var(--color-white);
     background: url("../images/menu-button-open-icon.svg");
     background-size: cover;
     border: none;
-    color: transparent;
     font-size: 0;
 }
 
@@ -282,38 +300,43 @@ header > aside:first-of-type {
 
 /* Header image for Home page */
 #home header section {
+    background-color: var(--color-white);
     background-image: url("../images/home-header-image.jpg");
 }
 
 /* Header image for Training page */
 #training header section {
+    background-color: var(--color-white);
     background-image: url("../images/training-header-image.jpg");
 }
 
 /* Header image for Memberships page */
 #memberships header section {
+    background-color: var(--color-white);
     background-image: url("../images/memberships-header-image.jpg");
 }
 
 /* Header image for About page */
 #about header section {
+    background-color: var(--color-white);
     background-image: url("../images/about-header-image.jpg");
 }
 
 /* Header image for Contact page */
 #contact header section {
+    background-color: var(--color-white);
     background-image: url("../images/contact-header-image.jpg");
 }
 
 /* Header image */
 header section {
-    background: var(--color-white);
-    height: 18rem;
     width: 100%;
-    background-repeat: no-repeat;
+    height: 18rem;
+    margin-bottom: 4rem;
+    background: var(--color-white);
     background-size: cover;
     background-position: 100% 0%;
-    margin-bottom: 4rem;
+    background-repeat: no-repeat;
 }
 
 /* Banner below header image remove from mobile devices */
@@ -329,30 +352,40 @@ main section,
 section > article {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: flex-start;
+    justify-content: flex-start;
+    align-content: center;
     width: 100%;
     text-align: center;
     padding: 1rem 0;
 }
 
-section > article {
-    padding-bottom: 3rem;
+/* Horizontal line between articles */
+section > article:first-of-type {
+    box-shadow: 0 0.1rem 0 0 var(--color-warm-gray);
 }
 
-section article > p {
+section > article > div,
+#contact form {
+    padding: 2rem 0;
+}
+
+section > article > p {
     width: 100%;
     margin-bottom: 1rem;
 }
 
-/* Margin added to provide space between links for fat fingers */
-section article div a {
+/* Margin added to provide space between links */
+section > article > div > a {
     display: inline-block;
     width: 100%;
     margin-bottom: 2rem;
 }
 
-section figure img {
+section figure {
+    width: 100%;
+}
+
+section > article figure img {
     width: 100%;
     padding-bottom: 0.5rem;
 }
@@ -362,7 +395,7 @@ figcaption blockquote {
 }
 
 /* Article icons */
-article img[src$=".svg"] {
+section > article figure img[src$=".svg"] {
     width: 25%;
     margin-top: 4rem;
 }
@@ -383,52 +416,468 @@ footer {
     align-items: center;
     width: 100%;
     padding: 1.3rem 0;
-    color: #fff;
+    color: var(--color-white);
     background: var(--color-dark-gray-blue);
 }
 
 /* #endregion Footer */
 
-/* #region Page specific */
+/* Page specific styling */
 
-#contact fieldset {
-    display: grid;
-    column-gap: 5%;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-auto-flow: row;
-    grid-auto-rows: 1fr;
+/* #region Memberships page */
+
+
+/* Membership cards */
+#memberships section > article article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    width: 100%;
+    margin: 0 auto 2rem auto;
+    border-top: 0.05rem solid var(--color-warm-gray);
+    text-align: center;
 }
 
-/* #endregion Page specific */
+#memberships section > article article h2 {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+    background-image: url("../images//memberships-card-header-background-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: multiply;
+    font-size: var(--font-size-ultra-large);
+}
+
+/* TODO move to media query */
+/* Membership cards */
+#memberships section > article article {
+    width: 80%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: rgb(0 0 0 / 15%) 0px 0.8rem 1.4rem 0px, rgb(0 0 0 / 15%) 0px 0.1rem 0.2rem 0px;
+}
+
+#memberships section > article article:nth-of-type(1) h2 {
+    background-color: #FFA50080;
+}
+
+#memberships section > article article:nth-of-type(3) h2 {
+    background-color: #FFD700a0;
+}
+
+#memberships section > article article ul {
+    min-height: 14em;
+    text-align: left;
+    /* margin: 1rem auto; */
+}
+
+#memberships section > article article img {
+    width: 1rem;
+    margin: 0 0.5rem;
+}
+
+#memberships section > article article li {
+    padding: 0.2rem 0;
+}
+
+#memberships section > article article a {
+    margin: 0 auto 1rem auto;
+}
+
+
+/* #endregion Memberships page */
+
+/* #region Contact page */
+
+/* Main form content,
+    radio buttons */
+#contact form > fieldset,
+#contact form > fieldset fieldset {
+    padding: 1rem 0;
+    z-index: 50;
+}
+
+#contact form label,
+#contact form legend,
+#contact form > fieldset fieldset h3 {
+    text-align: left;
+}
+
+/* Help link to show a popup video, styled same as CTA in common region */
+#contact form a {
+    display: inline-block;
+    margin: 1rem auto;
+    padding-bottom: 12rem;
+}
+
+/* Description for screen readers only */
+#contact form section p {
+    position: fixed;
+    left: -1000rem;
+    top: -1000rem;
+    width: 0.05rem;
+    height: 0.05rem;
+    color: transparent;
+    font-size: 0;
+}
+
+/* Initially hide help video.
+    Video overlay,
+    Video container */
+#contact form section div:first-of-type,
+#contact form section div:last-of-type {
+    display: none;
+}
+
+/* To make video popup modal a background is placed over page content
+ to prevent user interactivity until video popup is closed */
+#contact form section div:first-of-type.show {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff80;
+    z-index: 200;
+}
+
+/* Help video container positioned in center of browser */
+#contact form section div:last-of-type.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    background: #ccccccc0;
+    opacity: 1;
+    border: 0.05rem solid var(--color-warm-gray);
+    text-align: center;
+    z-index: 300;
+}
+
+/* Button to close the video popup */
+#contact form section button {
+    position: relative;
+    line-height: var(--font-size-super-large);
+    left: calc(100% - 4rem);
+    width: 4rem;
+    font-size: var(--font-size-super-large);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Color not in palette but required to  */
+#contact form section button:hover {
+    background: #E81123;
+}
+
+/* Help video */
+#contact video {
+    width: 100%;
+}
+
+/* Note to accessor, labels should not be removed according to
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input */
+
+/* Except for checkbox and radio buttons, remove labels */
+#contact form > fieldset > label:not(:last-of-type) {
+    position: fixed;
+    left: -1000rem;
+    top: -1000rem;
+    color: transparent;
+    font-size: 0;
+}
+
+/* Container for each text or numeric input types and its icon */
+#contact form fieldset > div {
+    position: relative;
+    width: 100%;
+}
+
+/* Icons for all text and numeric input types */
+#contact form img {
+    position: absolute;
+    left: 0;
+    top: 0.7rem;
+    width: 1.2rem;
+    z-index: 10;
+}
+
+/* Required to prevent chrome autofill background covering icons
+ Kostiantyn Ko, 2021,
+ https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+/* All text and numeric input types */
+#contact form input:not([type=checkbox]):not([type=radio]),
+#contact form textarea {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    margin: 0 auto;
+    border: 0.1rem solid var(--color-warm-gray);
+    border-radius: 0.7rem;
+    text-align: left;
+}
+
+/* All text input and textarea with required state */
+#contact input:required ~ span::after,
+#contact textarea:required ~ span::after {
+    content: "Required";
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+    padding-left: 1rem;
+    text-align: left;
+}
+
+/* Error div */
+#contact form > fieldset div div {
+    display: inline-block;
+    width: 100%;
+    height: 2rem;
+    padding-left: 1rem;
+    text-align: left;
+    vertical-align: middle;
+    margin-bottom: 2rem;
+}
+
+#contact form > fieldset > div:nth-of-type(1) input:invalid ~ div::after {
+    content: "Must contain only letters, hyphen and apostrophes";
+}
+
+#contact form > fieldset > div:nth-of-type(2) input:invalid ~ div::after {
+    content: "Must contain only letters, hyphen and apostrophes";
+}
+
+#contact form > fieldset > div:nth-of-type(3) input:invalid ~ div::after {
+    content: "Please enter a valid email address";
+}
+
+#contact form > fieldset > div:nth-of-type(4) input:invalid ~ div::after {
+    content: "Phone number can only contain numbers and spaces";
+}
+
+#contact form > fieldset > div:nth-of-type(6) input:invalid ~ div::after {
+    content: "Please enter a whole number between 6 and 24";
+}
+
+#contact form > fieldset > div:nth-of-type(1) input:placeholder-shown ~ div::after,
+#contact form > fieldset > div:nth-of-type(2) input:placeholder-shown ~ div::after,
+#contact form > fieldset > div:nth-of-type(3) input:placeholder-shown ~ div::after,
+#contact form > fieldset > div:nth-of-type(4) input:placeholder-shown ~ div::after,
+#contact form > fieldset > div:nth-of-type(6) input:placeholder-shown ~ div::after {
+    content: "";
+}
+
+/* Set min and max size of textarea */
+#contact form textarea {
+    min-height: 6rem;
+    max-height: 20rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    resize: vertical;
+}
+
+/* Remove goals and preferred subscription inputs which are not required inputs */
+#contact form fieldset > div:nth-last-of-type(-n+2) {
+    display: none;
+}
+
+/* Hover effect for all controls other than checkbox and radio buttons */
+#contact form > fieldset input:hover,
+#contact form textarea:hover,
+#contact form fieldset > button:hover {
+    box-shadow: 0 0.1rem 0 0 var(--color-warm-gray);
+}
+
+#contact input::placeholder,
+#contact form textarea::placeholder {
+    color: var(--color-gray-blue);
+}
+
+/* All text inputs and textarea all states */
+#contact input:valid,
+#contact input:invalid,
+input:focus:invalid,
+#contact textarea:valid,
+#contact textarea:invalid,
+textarea:focus:invalid {
+    background-repeat: no-repeat;
+    z-index: 15;
+}
+
+/* All text inputs only all states */
+#contact input:valid,
+#contact input:invalid,
+input:focus:invalid {
+    background-position: top 50% right 2%;
+}
+
+/* Textarea only all states */
+#contact textarea:valid,
+#contact textarea:invalid,
+textarea:focus:invalid {
+    background-position: top 10% right 2%;
+}
+
+/* All text inputs and textarea all invalid states */
+#contact input:invalid,
+input:focus:invalid,
+#contact textarea:invalid,
+textarea:focus:invalid {
+    background: var(--color-white);
+    background-image: url(../images/cross-icon.svg);
+    background-size: 0.8rem;
+}
+
+/* All text input and textarea valid state */
+#contact input:valid,
+#contact textarea:valid {
+    background: var(--color-white);
+    background-image: url(../images/check-mark-icon.svg);
+    background-size: 1rem;
+}
+
+/* All text input and textarea with no input */
+#contact input:placeholder-shown,
+#contact textarea:placeholder-shown {
+    background-image: none;
+}
+
+/* Checkbox and radio button labels */
+#contact form > fieldset label:last-of-type,
+#contact form > fieldset fieldset label {
+    display: block;
+    width: fit-content;
+}
+
+/* Required to restore appearance which is removed by CSS reset */
+#contact form input[type=checkbox],
+#contact form input[type=radio] {
+    appearance: auto;
+    margin: 1rem 1rem;
+    cursor: default;
+    transform: scale(1.4);
+}
+
+/* Submit button */
+#contact form fieldset > button {
+    display: block;
+    width: 10rem;
+    height: 2.5rem;
+    margin: 0 auto 0.75rem auto;
+    border: 0.15rem solid var(--color-warm-gray);
+    border-radius: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Our locations */
+
+/* Location cards */
+#contact article div article {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3rem;
+    border: 0.05rem solid var(--color-warm-gray);
+}
+
+/* Location card heading */
+#contact article div h3 {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+}
+
+/* Location card icon */
+#contact article div img {
+    width: 1.5rem;
+    padding: 0 0 1.5rem 0.5rem;
+}
+
+/* Location card details */
+#contact article div p {
+    width: calc(100% - 2.5rem);
+    padding: 0 0 1.5rem 1rem;
+    text-align: left;
+}
+
+/* Contact Us link & Join link
+    padding added to increase clickable area
+    margin added to create non-clickable area between links */
+#contact article div article a
+{
+    width: calc(100% - 1rem);
+    margin: 0.5rem;
+    padding: 0.5rem 0;
+    font-weight: bold;
+}
+
+/* Contact Us link */
+#contact article div article a:first-of-type {
+    color: var(--color-white);
+    background: var(--color-dark-gray-blue);
+    outline: 0.5rem solid var(--color-dark-gray-blue);
+}
+
+/* Join link */
+#contact article div article a:last-of-type {
+    background: var(--color-very-dark-orange);
+    outline: 0.5rem solid var(--color-very-dark-orange);
+}
+
+/* Need to create focus ring for accessibility */
+#contact article div article a:hover {
+    text-decoration: underline;
+}
+
+/* Need to create focus ring for accessibility */
+#contact article div article a:focus {
+    outline-style: double;
+    border-radius: 0.05rem;
+}
+
+/* #endregion Contact page */
 
 /* #region Media queries */
-
-/* 320px */
-@media all and (min-width: 20rem) {
-
-    /* Chris Coyier 2019 Simplified Fluid Typography CSS-Tricks
-    URL [https://css-tricks.com/simplified-fluid-typography] Accessed 14/12/2022 */
-    html {
-        font-size: calc(1rem + 6 * ((100vw - 20rem) / 680));
-    }
-}
 
 /* 1000px */
 @media all and (min-width: 62.5rem) {
 
-        /* This is required to offset the scroll when a
-    menu link is clicked dues to the fixed header */
+    /* Scroll padding not required for scrollable banner on desktop */
     html {
-        /* scroll-padding-top: 4.8rem; */
-        font-size: 1.4rem;
+        scroll-padding-top: 0;
     }
 
+    /* Scrollable navigation banner on desktop */
+    header nav {
+        position: static;
+    }
+
+    /* Push logo to the left and menu to the right */
     header nav > a {
         margin-right: auto;
     }
 
-    /* Display menu at right end of fixed navigation banner on desktop */
+    /* Display menu at right end of navigation banner on desktop */
     header nav div {
         display: inline-block;
         position: static;
@@ -467,50 +916,47 @@ footer {
         display: none;
     }
 
-    header > img {
-        margin-top: 4rem;
-        height: 22rem;
-        background: var(--color-white);
-        /* border-left: 50vw solid var(--color-white); */
-        margin-bottom: -3.5rem;
-    }
-
     /* Header image for Home page */
     #home header section {
+        background-color: var(--color-white);
         background-image: url("../images/home-header-image-extended.jpg");
     }
 
     /* Header image for Training page */
     #training header section {
+        background-color: var(--color-white);
         background-image: url("../images/training-header-image-extended.jpg");
     }
 
     /* Header image for Memberships page */
     #memberships header section {
+        background-color: var(--color-white);
         background-image: url("../images/memberships-header-image-extended.jpg");
     }
 
     /* Header image for About page */
     #about header section {
+        background-color: var(--color-white);
         background-image: url("../images/about-header-image-extended.jpg");
     }
 
     /* Header image for Contact page */
     #contact header section {
+        background-color: var(--color-white);
         background-image: url("../images/contact-header-image-extended.jpg");
     }
+
     /* Header image */
     header section {
         height: 22rem;
-        background-position: 70% 0%;
-        margin-top: 4rem;
         margin-bottom: 0;
+        background-position: 70% 0%;
     }
 
     /* Move title to left of header image */
     h1 {
-        width: 45%;
         top: 9rem;
+        width: 45%;
     }
 
     /* Banner with slogan and Find Us CTA */
@@ -536,11 +982,12 @@ footer {
     /* Main content */
     main section {
         width: 80%;
-        margin: auto;
+        margin: 0 auto;
+        padding: 0;
     }
 
     /* Main content articles */
-    section article div {
+    section > article > div {
         display: grid;
         column-gap: 5%;
         grid-template-columns: 1fr 1fr 1fr;
@@ -551,13 +998,54 @@ footer {
 
     section article a img {
         min-height:  10rem;
-        object-fit: cover;
         object-position: center;
+        object-fit: cover;
     }
 
     /* Amenities icons */
     article img[src$=".svg"] {
         width: 30%;
+    }
+
+    /* Show goals input */
+    #contact form fieldset > div:nth-last-of-type(-n+2) {
+        display: block;
+    }
+
+    #contact form {
+        width: 100%;
+    }
+
+    #contact form > fieldset {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 2rem;
+        border: 1px solid var(--color-dark-gray-blue);
+        border-radius: 1rem;
+    }
+
+    #contact form > fieldset > label:not(:last-of-type) {
+        display: block;
+        position: static;
+        margin-bottom: 0.5rem;
+        color: var(--color-black);
+        font-size: var(--font-size-default);
+    }
+
+    #contact-form fieldset legend {
+        padding: 1rem;
+    }
+
+    #contact-form fieldset fieldset {
+        margin-bottom: 2rem;
+    }
+
+    #contact section > article > div {
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+        align-items: flex-start;
     }
 }
 
