@@ -352,8 +352,24 @@ header section {
     margin-bottom: 4rem;
     background: var(--color-white);
     background-size: cover;
-    background-position: 100% 0%;
     background-repeat: no-repeat;
+}
+
+/* Home header image */
+#home header section {
+    background-position: 100% 0%;
+}
+
+/* Training, memberships, contact header image */
+#training header section,
+#memberships header section,
+#contact header section {
+    background-position: 100% 25%;
+}
+
+/* About header image */
+#about header section {
+    background-position: 100% 60%;
 }
 
 /* Banner below header image remove from mobile devices */
@@ -948,6 +964,20 @@ footer {
 /* #endregion ++++++++++ Contacts page ++++++++++ */
 
 /* V----------V----------V Media queries V----------V----------V */
+
+/* 1000px */
+@media all and (min-width: 48rem) {
+
+    /* Header image */
+    header section {
+        height: 22rem;
+    }
+
+    /*  */
+    h1 {
+        top: 23rem;
+    }
+}
 
 /* 1000px */
 @media all and (min-width: 62.5rem) {
