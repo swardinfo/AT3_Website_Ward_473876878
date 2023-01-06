@@ -5,10 +5,11 @@ const openHelpVideoLink = document.querySelector("#open-help-video-link");
 const closeHelpVideoButton = document.querySelector("#close-help-video-button");
 const helpVideoContainer = document.querySelector("#help-video-container");
 const videoOverlay = document.querySelector("#video-overlay");
-const contactMeCheckbox = document.querySelector("#contact-me");
-const emailContactRadioButton = document.querySelector("#email-contact");
-const phoneContactRadioButton = document.querySelector("#phone-contact");
-const submitButton = document.querySelector("#submit")
+const contactMeCheckbox = document.querySelector("#contact #contact-me");
+const emailContactRadioButton = document.querySelector("#contact #email-contact");
+const phoneContactRadioButton = document.querySelector("#contact #phone-contact");
+const submitButton = document.querySelector("#contact #submit")
+const requiredInputs = document.querySelectorAll("#contact [required]")
 
 /**
  * Imports external menu and footer HTML into a page
@@ -82,6 +83,15 @@ closeHelpVideoButton.addEventListener("click", function(e) {
 contactMeCheckbox.addEventListener("click", function(e) {
     emailContactRadioButton.disabled = !contactMeCheckbox.checked;
     phoneContactRadioButton.disabled = !contactMeCheckbox.checked;
+});
+
+submitButton.addEventListener("click", function(e) {
+    requiredInputs.forEach((element) => {
+        if (element.value === '') {
+            element.style
+        }
+
+    });
 });
 
 /**

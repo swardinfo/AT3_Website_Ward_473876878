@@ -97,12 +97,19 @@ meter {
     --color-gray-blue: #4F5D75;
     --color-dark-gray-blue: #2D3142;
     --color-black: #000000;
+    --color-valid: #008000;
+    --color-invalid: #ff0000;
+    --color-close-button-background: #E81123;
+    --color-transparent-bronze: #ffa500c0;
+    --color-transparent-gold: #ffd700a0;
+    --color-modal-overlay: #ffffff80;
+    --color-dialog-header-background: #ccccccc0;
     --font-size-small: 0.9rem;
     --font-size-default: 1rem;
-    --font-size-large: 1.25rem;
-    --font-size-very-large: 1.5rem;
-    --font-size-ultra-large: 1.9rem;
-    --font-size-super-large: 3rem;
+    --font-size-large-1: 1.25rem;
+    --font-size-large-2: 1.5rem;
+    --font-size-large-3: 1.9rem;
+    --font-size-large-4: 3rem;
 }
 
 html {
@@ -140,18 +147,18 @@ label{
 h1 {
     position: relative;
     top: 19rem;
-    font-size: var(--font-size-ultra-large);
+    font-size: var(--font-size-large-3);
     text-align: center;
 }
 
 h2 {
-    font-size: var(--font-size-very-large);
+    font-size: var(--font-size-large-2);
 }
 
 h3,
 strong,
 legend {
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-large-1);
 }
 
 /* Prevent text overflowing containers */
@@ -454,17 +461,17 @@ footer {
     background-repeat: no-repeat;
     background-position: center center;
     background-blend-mode: multiply;
-    font-size: var(--font-size-ultra-large);
+    font-size: var(--font-size-large-3);
 }
 
 /* Bronze membership card header banner */
 #memberships section > article article:nth-of-type(1) h2 {
-    background-color: #ffa500c0;
+    background-color: var(--color-transparent-bronze);
 }
 
 /* Gold membership card header banner */
 #memberships section > article article:nth-of-type(3) h2 {
-    background-color: #ffd700a0;
+    background-color: var(--color-transparent-gold);
 }
 
 /* Membership card details */
@@ -530,7 +537,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #ffffff80;
+    background: var(--color-modal-overlay);
     z-index: 200;
 }
 
@@ -543,7 +550,7 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    background: #ccccccc0;
+    background: var(--color-dialog-header-background);
     opacity: 1;
     border: 0.05rem solid var(--color-warm-gray);
     text-align: center;
@@ -553,17 +560,17 @@ footer {
 /* Button to close the video popup */
 #contact section section button {
     position: relative;
-    line-height: var(--font-size-super-large);
+    line-height: var(--font-size-large-4);
     left: calc(100% - 4rem);
     width: 4rem;
-    font-size: var(--font-size-super-large);
+    font-size: var(--font-size-large-4);
     font-weight: bold;
     text-align: center;
 }
 
 /* Video popup close button hover color  */
 #contact section section button:hover {
-    background: #E81123;
+    background: var(--color-close-button-background);
 }
 
 /* Help video */
@@ -707,7 +714,7 @@ footer {
     height: 2rem;
     line-height: 2rem;
     padding-left: 2.5rem;
-    color: #ff0000;
+    color: car(--color-invalid);
     font-weight: bold;
 }
 
@@ -734,12 +741,12 @@ footer {
 
 /* Text inputs borders with invalid state */
 #contact form input:not(:focus):not(:placeholder-shown):not([type=checkbox]):not([type=radio]):invalid {
-    border: 0.2rem solid red ;
+    border: 0.2rem solid var(--color-valid) ;
 }
 
 /* Text inputs borders with valid state */
 #contact form input:not(:focus):not(:placeholder-shown):not([type=checkbox]):not([type=radio]):valid {
-    border: 0.2rem solid green ;
+    border: 0.2rem solid var(--color-invalid) ;
 }
 
  /* Set min and max size of textarea */
