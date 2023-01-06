@@ -8,8 +8,8 @@ const videoOverlay = document.querySelector("#video-overlay");
 const contactMeCheckbox = document.querySelector("#contact #contact-me");
 const emailContactRadioButton = document.querySelector("#contact #email-contact");
 const phoneContactRadioButton = document.querySelector("#contact #phone-contact");
-const submitButton = document.querySelector("#contact #submit")
-const requiredInputs = document.querySelectorAll("#contact [required]")
+// const requiredInputs = document.querySelectorAll("#contact [required]");
+const submitButton = document.querySelector("#contact #submit");
 
 /**
  * Imports external menu and footer HTML into a page
@@ -25,6 +25,10 @@ $(document).ready(function(){
 window.addEventListener("load", function() {
     handleScreenSizeChange(mediaQuery);
 }, {once: true});
+
+window.addEventListener("input", function(e) {
+    if (e.target.classList.remove("no-value"));
+});
 
 /**
  * Adds a listener to monitor screen size changes.
@@ -86,12 +90,16 @@ contactMeCheckbox.addEventListener("click", function(e) {
 });
 
 submitButton.addEventListener("click", function(e) {
-    requiredInputs.forEach((element) => {
-        if (element.value === '') {
-            element.style
+    var requiredInputs = document.querySelectorAll("#contact [required]");
+    requiredInputs.forEach((el) => {
+        if (el.value === '') {
+            el.classList.add("no-value");
         }
-
     });
+});
+
+requiredInputs.addEventListener("click", function(e) {
+    // if
 });
 
 /**

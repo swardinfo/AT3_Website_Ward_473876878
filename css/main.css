@@ -110,6 +110,9 @@ meter {
     --font-size-large-2: 1.5rem;
     --font-size-large-3: 1.9rem;
     --font-size-large-4: 3rem;
+    --border-input-default: 0.1rem solid var(--color-warm-gray);
+    --border-input-valid: 0.2rem solid var(--color-valid);
+    --border-input-invalid: 0.2rem solid var(--color-invalid);
 }
 
 html {
@@ -405,6 +408,23 @@ figcaption blockquote {
     text-align: center;
 }
 
+section > article:last-of-type > h2 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 5rem;
+
+    background-image: url(../images/middle-heading-background-image.jpg);
+    background-color: #ffffff80;
+    background-blend-mode: multiply;
+}
+
+section > article:last-of-type > h2 + p {
+    display: block;
+    position: relative;
+    top: -3rem;
+}
+
 /* Article icons */
 section > article figure img[src$=".svg"] {
     width: 25%;
@@ -449,7 +469,7 @@ footer {
 }
 
 /* Membership card header banner */
-#memberships section > article article h2 {
+#memberships section > article article h3 {
     display: inline-block;
     width: 100%;
     vertical-align: middle;
@@ -465,12 +485,12 @@ footer {
 }
 
 /* Bronze membership card header banner */
-#memberships section > article article:nth-of-type(1) h2 {
+#memberships section > article article:nth-of-type(1) h3 {
     background-color: var(--color-transparent-bronze);
 }
 
 /* Gold membership card header banner */
-#memberships section > article article:nth-of-type(3) h2 {
+#memberships section > article article:nth-of-type(3) h3 {
     background-color: var(--color-transparent-gold);
 }
 
@@ -707,14 +727,15 @@ footer {
 }
 
 /* Error div message styling */
-#contact form > fieldset > div input:invalid ~ div::after {
+#contact form > fieldset > div input:invalid ~ div::after,
+#contact form > fieldset > div textarea:invalid ~ div::after{
     display: block;
     position: relative;
     width: fit-content;
     height: 2rem;
     line-height: 2rem;
     padding-left: 2.5rem;
-    color: car(--color-invalid);
+    color: var(--color-invalid);
     font-weight: bold;
 }
 
@@ -740,13 +761,14 @@ footer {
 }
 
 /* Text inputs borders with invalid state */
-#contact form input:not(:focus):not(:placeholder-shown):not([type=checkbox]):not([type=radio]):invalid {
-    border: 0.2rem solid var(--color-valid) ;
+/* #contact form fieldset div input:not(:focus):not(:placeholder-shown):not([type=checkbox]):not([type=radio]):invalid { */
+#contact form > fieldset > div input:not(:focus):not(:placeholder-shown):invalid {
+    border: var(--border-input-invalid);
 }
 
 /* Text inputs borders with valid state */
-#contact form input:not(:focus):not(:placeholder-shown):not([type=checkbox]):not([type=radio]):valid {
-    border: 0.2rem solid var(--color-invalid) ;
+#contact form > fieldset > div input:not(:focus):not(:placeholder-shown):valid {
+    border: var(--border-input-valid);
 }
 
  /* Set min and max size of textarea */
@@ -811,6 +833,45 @@ footer {
     border-radius: 2.5rem;
     text-align: center;
     font-weight: bold;
+}
+
+/* All text input and textarea with invalid state */
+#contact form fieldset > div input:not([type=checkbox]).no-value ~ div::before,
+#contact form > fieldset > div textarea.no-value ~ div::before {
+    background-image: url(../images/cross-icon.svg);
+}
+
+/* Invalid border on required text inputs if empty when submit button clicked */
+
+#contact form fieldset > div input:not([type=checkbox]).no-value,
+#contact form textarea.no-value {
+    border: var(--border-input-invalid);
+}
+
+/* First name and last name error message if empty when submit button clicked*/
+#contact form > fieldset > div:nth-of-type(1) input.no-value ~ div::after,
+#contact form > fieldset > div:nth-of-type(2) input.no-value ~ div::after {
+    content: "Please enter a valid name";
+}
+
+/* Email address error message if empty when submit button clicked*/
+#contact form > fieldset > div:nth-of-type(3) input.no-value ~ div::after {
+    content: "Please enter a valid email address";
+}
+
+/* Phone number error message if empty when submit button clicked*/
+#contact form > fieldset > div:nth-of-type(4) input.no-value ~ div::after {
+    content: "Please enter a valid phone number";
+}
+
+/* Preferred subscription length error message if empty when submit button clicked*/
+#contact form > fieldset > div:nth-of-type(6) input.no-value ~ div::after {
+    content: "Please enter a whole number between 6 and 24";
+}
+
+/* Preferred subscription length error message if empty when submit button clicked*/
+#contact form > fieldset > div textarea.no-value ~ div::after {
+    content: "Please enter a message";
 }
 
 /* Our locations */
