@@ -48,45 +48,51 @@
             <section id="contact-form">
                 <article>
                     <h2>Contact</h2>
+                    <section aria-labelledby="open-help-video-link" aria-describedby="help-video-description">
+                        <p id="help-video-description">Click help link to view the help video for this form</p>
+                        <!-- Used to overlay the video container to prevent user access behind -->
+                        <div id="video-overlay">
+                        </div>
+                        <!-- Outer container to provide window reference for video -->
+                        <div id="help-video-container">
+                            <button type="button" id="close-help-video-button">&times;</button>
+                            <!-- <video id="video" poster="./images/poster.svg" controls> -->
+                            <video id="video" autoplay controls>
+                                <source src="./video/Cow-23123-640x360.mp4" type="video/mp4">
+                                Your browser does not support this video format.
+                            </video>
+                        </div>
+                    </section>
                     <form>
                         <fieldset>
                             <legend>Contact form</legend>
-                            <section aria-labelledby="open-help-video-link" aria-describedby="help-video-description">
-                                <h3>Form help video</h3>
-                                <a id="open-help-video-link"  href="#help-video">Help</a>
-                                <p id="help-video-description">The help video for this form</p>
-                                <!-- Used to overlay the video container to prevent user access behind -->
-                                <div id="video-overlay">
-                                </div>
-                                <!-- Outer container to provide window reference for video -->
-                                <div id="help-video-container">
-                                    <button type="button" id="close-help-video-button">&times;</button>
-                                    <!-- <video id="video" poster="./images/poster.svg" controls> -->
-                                    <video id="video" autoplay controls>
-                                        <source src="./video/Cow-23123-640x360.mp4" type="video/mp4">
-                                        Your browser does not support this video format.
-                                    </video>
-                                </div>
-                            </section>
+                            <a id="open-help-video-link"  href="#help-video">Help Video</a>
+                            <!-- Required fields are labelled with a non semantic symbol and fields with required attribute
+                                 are announced by screen reader so this information can be hidden from screen readers -->
+                            <span aria-hidden="true">Denotes required information</span>
                             <!-- Regex for first and last names based on Births, Deaths and Marriages Victoria naming restrictions
                                 https://www.bdm.vic.gov.au/births/naming-your-child/naming-restrictions -->
-                            <label for="first-name">*First Name:</label>
                             <div>
+                                <label for="first-name" aria-labelledby="first-name">First Name:</label>
                                 <img src="./images/person-icon.svg" alt="">
-                                <input id="first-name" type="text" name="first-name" placeholder="First Name (required)" required
+                                <!-- TODO fix regex -->
+                                <input id="first-name" type="text" name="first-name" placeholder="First Name" required
                                     title="Required first name, max length 38 characters and only letters, hyphens and apostrophes are allowed"
-                                    maxlength="38" pattern="[a-zA-Z']{0,37}[-]{0,1}[a-zA-Z']{0,37}">
+                                    maxlength="38" pattern="^[a-zA-Z][a-zA-Z]{0,36}['-]{0,1}[a-zA-Z]{0,36}['-]{0,1}[a-zA-Z]{0,36}$">
+                                    <!-- maxlength="38" pattern="^[a-zA-Z][a-zA-Z]{0,36}['-]{0,1}[a-zA-Z]{0,36}['-]{0,1}[a-zA-Z]{0,36}$"> -->
                                 <!-- Required span -->
                                 <span>
                                 </span>
                                 <!-- Error div -->
                                 <div>
+                                    <!-- <p>test</p> -->
                                 </div>
                             </div>
-                            <label for="last-name">*Last Name:</label>
                             <div>
+                                <label for="last-name" aria-labelledby="last-name">Last Name:</label>
                                 <img src="./images/person-icon.svg" alt="">
-                                <input id="last-name" type="text" name="last-name" placeholder="Last Name (required)" required
+                                <!-- TODO fix regex -->
+                                <input id="last-name" type="text" name="last-name" placeholder="Last Name" required
                                     title="Required last name, max length 38 characters and only letters, hyphens and apostrophes are allowed"
                                     maxlength="38" pattern="[a-zA-Z']{0,37}[-]{0,1}[a-zA-Z']{0,37}">
                                 <!-- Required span -->
@@ -96,11 +102,12 @@
                                 <div>
                                 </div>
                             </div>
-                            <label for="email">*Email:</label>
                             <div>
+                                <label for="email" aria-labelledby="email">Email:</label>
                                 <img src="./images/envelope-icon.svg" alt="">
+                                <!-- TODO fix regex -->
                                 <!-- Email regex pattern taken from https://www.regular-expressions.info/email.html -->
-                                <input id="email" type="email" name="email" placeholder="Email (required)" required
+                                <input id="email" type="email" name="email" placeholder="Email" required
                                     title="Required valid email address" maxlength="254">
                                 <!-- Required span -->
                                 <span>
@@ -109,10 +116,11 @@
                                 <div>
                                 </div>
                             </div>
-                            <label for="tel">*Phone:</label>
                             <div>
+                                <label for="tel" aria-labelledby="tel">Phone:</label>
                                 <img src="./images/phone-icon.svg" alt="">
-                                <input id="tel" type="tel" name="tel" placeholder="Phone (required)" required
+                                <!-- TODO fix regex -->
+                                <input id="tel" type="tel" name="tel" placeholder="Phone" required
                                     title="Required phone number" pattern="[0-9 ]+" maxlength="16">
                                 <!-- Required span -->
                                 <span>
@@ -121,8 +129,8 @@
                                 <div>
                                 </div>
                             </div>
-                            <label for="goals">Goals (eg. Improve fitness, weight loss, increase strength):</label>
                             <div>
+                                <label for="goals" aria-labelledby="goals">Goals (eg. Improve fitness, weight loss, increase strength):</label>
                                 <img src="./images/flag-icon.svg" alt="">
                                 <input id="goals" type="text" name="goals" placeholder="Goals"
                                     title="Optional goals, max length 60 characters" maxlength="60">
@@ -130,8 +138,8 @@
                                 <div>
                                 </div>
                             </div>
-                            <label for="months">Preferred subscription length (months, 6 - 24)):</label>
                             <div>
+                                <label for="months" aria-labelledby="months">Preferred subscription length (months, 6 - 24)):</label>
                                 <img src="./images/hashtag-bubble-icon.svg" alt="">
                                 <input id="months" type="number" min="3" max="24" name="months" placeholder="Preferred subscription"
                                     title="Optional subscription length 6 to 24">
@@ -139,10 +147,10 @@
                                 <div>
                                 </div>
                             </div>
-                            <label for="message">*Message</label>
                             <div>
+                                <label for="message" aria-labelledby="message">Message</label>
                                 <img src="./images/writing-icon.svg" alt="">
-                                <textarea id="message" name="message" placeholder="Message (required)" maxlength="600" required
+                                <textarea id="message" name="message" placeholder="Message" maxlength="600" required
                                     title="Required message, max length 600 characters"></textarea>
                                 <!-- Required span -->
                                 <span>
@@ -151,17 +159,17 @@
                                 <div>
                                 </div>
                             </div>
-                            <label for="contact-me">
+                            <label for="contact-me" aria-labelledby="contact-me">
                                 <input id="contact-me" type="checkbox" name="contact-me" value="checked">
                                 Contact me
                             </label>
                             <fieldset>
-                                <h3>Preferred contact method</h3>
-                                <label for="email-contact">
+                                <legend>Preferred contact method</legend>
+                                <label for="email-contact" aria-labelledby="email-contact">
                                     <input id="email-contact" type="radio" name="contact-method" value="email" disabled checked>
                                      Email
                                 </label>
-                                <label for="phone-contact">
+                                <label for="phone-contact" aria-labelledby="phone-contact">
                                     <input id="phone-contact" type="radio" name="contact-method" value="phone" disabled>
                                      Phone
                                 </label>

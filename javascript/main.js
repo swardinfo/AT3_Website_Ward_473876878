@@ -8,6 +8,7 @@ const videoOverlay = document.querySelector("#video-overlay");
 const contactMeCheckbox = document.querySelector("#contact-me");
 const emailContactRadioButton = document.querySelector("#email-contact");
 const phoneContactRadioButton = document.querySelector("#phone-contact");
+const submitButton = document.querySelector("#submit")
 
 /**
  * Imports external menu and footer HTML into a page

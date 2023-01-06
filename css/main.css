@@ -1,6 +1,6 @@
 /* CSS is written for mobile first design */
 
-/* #region Normalization */
+/* #region ++++++++++ Normalization ++++++++++ */
 
 /***
     The new CSS reset - version 1.7.3 (last updated 7.8.2022)
@@ -86,9 +86,9 @@ meter {
     -webkit-user-drag: element;
 }
 
-/* #endregion Normalization */
+/* #endregion  ++++++++++ Normalization ++++++++++  */
 
-/* #region Common */
+/* #region ++++++++++ Common ++++++++++ */
 
 :root {
     --color-white: #FFFFFF;
@@ -154,7 +154,7 @@ legend {
     font-size: var(--font-size-large);
 }
 
-/*  */
+/* Prevent text overflowing containers */
 p,
 textarea {
     overflow-wrap: break-word;
@@ -181,39 +181,26 @@ a:hover {
     text-decoration-thickness: 0.1rem;
 }
 
-
 /* CTAs
     Contact form help link */
-     aside a,
-     #memberships section > article article a,
-     #contact form fieldset a {
-         width: 8rem;
-         height: fit-content;
-         padding: 0.25rem 0;
-         color: var(--color-black);
-         background: var(--color-very-dark-orange);
-         border-radius: 100vh;
-         text-align: center;
-         font-weight: bold;
-     }
+aside a,
+#memberships section > article article a,
+#contact form fieldset a {
+    width: 8rem;
+    height: fit-content;
+    padding: 0.25rem 0;
+    color: var(--color-black);
+    background: var(--color-very-dark-orange);
+    border-radius: 100vh;
+    text-align: center;
+    font-weight: bold;
+}
 
-     /* CTAs, underline on hover */
-     /* aside a:hover,
-     #memberships section > article article a:hover,
-     #contact form fieldset a:hover,
-     section a:hover {
-         text-decoration: underline;
-         text-underline-offset: 0.2rem;
-         text-decoration-thickness: 0.1rem;
-     } */
+/* #endregion ++++++++++ Common ++++++++++ */
 
+/* #region ++++++++++ Header ++++++++++ */
 
-
-/* #endregion Common */
-
-/* #region Header */
-
-/* Fixed navigation banner on mobile devices*/
+/* Navigation banner, fixed on mobile devices*/
 header nav {
     display: flex;
     justify-content: space-between;
@@ -225,7 +212,7 @@ header nav {
     height: 4rem;
     padding: 0.1rem 1.3rem;
     background: var(--color-dark-gray-blue);
-    z-index: 300;
+    z-index: 100;
 }
 
 /* Home logo link */
@@ -302,7 +289,7 @@ header nav aside {
 /* Hamburger button */
 header button {
     display: inline-block;
-    padding: 1.3rem 1.3rem;
+    padding: 1.3rem;
     overflow: hidden;
     color: transparent;
     background: var(--color-white);
@@ -363,10 +350,11 @@ header > aside:last-of-type {
     display: none;
 }
 
-/* #endregion Header */
+/* #endregion ++++++++++ Header ++++++++++ */
 
-/* #region Main content */
+/* #region ++++++++++ Main content ++++++++++ */
 
+/* Main section 100% width on mobile only */
 main section,
 section > article {
     display: flex;
@@ -378,16 +366,12 @@ section > article {
     padding: 1rem 0;
 }
 
-/* Horizontal line between articles */
-section > article:first-of-type {
-    box-shadow: 0 0.1rem 0 0 var(--color-warm-gray);
-}
-
 section > article > div,
 #contact form {
     padding: 2rem 0;
 }
 
+/* Text below main content heading */
 section > article > p {
     width: 100%;
     margin-bottom: 1rem;
@@ -404,6 +388,7 @@ section figure {
     width: 100%;
 }
 
+/* Picture images */
 section > article figure img {
     width: 100%;
     padding-bottom: 0.5rem;
@@ -419,15 +404,15 @@ section > article figure img[src$=".svg"] {
     margin-top: 4rem;
 }
 
-/* End banner */
+/* Full width end banner */
 main > aside {
     width: 100%;
     background-color: var(--color-warm-gray);
 }
 
-/* #endregion Main content */
+/* #endregion ++++++++++ Main content ++++++++++ */
 
-/* #region Footer */
+/* #region ++++++++++ Footer ++++++++++ */
 
 footer {
     display: flex;
@@ -439,11 +424,11 @@ footer {
     background: var(--color-dark-gray-blue);
 }
 
-/* #endregion Footer */
+/* #endregion ++++++++++ Footer ++++++++++ */
 
-/* Page specific styling */
+/* V----------V----------V Page specific styling V----------V----------V */
 
-/* #region Memberships page */
+/* #region ++++++++++ Memberships page ++++++++++ */
 
 /* Membership cards */
 #memberships section > article article {
@@ -456,6 +441,7 @@ footer {
     text-align: center;
 }
 
+/* Membership card header banner */
 #memberships section > article article h2 {
     display: inline-block;
     width: 100%;
@@ -471,23 +457,22 @@ footer {
     font-size: var(--font-size-ultra-large);
 }
 
+/* Bronze membership card header banner */
 #memberships section > article article:nth-of-type(1) h2 {
     background-color: #ffa500c0;
 }
 
+/* Gold membership card header banner */
 #memberships section > article article:nth-of-type(3) h2 {
     background-color: #ffd700a0;
 }
 
+/* Membership card details */
 #memberships section > article article ul {
     text-align: left;
 }
 
-#memberships section > article article img {
-    width: 1rem;
-    margin: 0 0.5rem;
-}
-
+/* Membership card detail item */
 #memberships section > article article li {
     list-style-position: outside;
     padding: 0.2rem 0;
@@ -500,42 +485,25 @@ footer {
     margin-left: 0.5rem;
 }
 
+/* Membership card starting from text and price */
 #memberships section > article article p,
 #memberships section > article article strong{
     margin: 0 auto 0.5rem auto;
 }
 
+/* Membership card select CTA */
 #memberships section > article article a {
     margin: 0 auto 2rem auto;
 }
 
-/* #endregion Memberships page */
+/* #endregion ++++++++++ Memberships ++++++++++ */
 
-/* #region Contact page */
+/* #region ++++++++++ Contacts page ++++++++++ */
 
-/* Main form content,
-    radio buttons */
-#contact form > fieldset,
-#contact form > fieldset fieldset {
-    padding: 1rem 0;
-    z-index: 50;
-}
+/* V----------V----------V Form help video V----------V----------V */
 
-#contact form label,
-#contact form legend,
-#contact form > fieldset fieldset h3 {
-    text-align: left;
-}
-
-/* Help link to show a popup video, styled same as CTA in common region */
-#contact form a {
-    display: inline-block;
-    margin: 1rem auto;
-    padding-bottom: 12rem;
-}
-
-/* Description for screen readers only */
-#contact form section p {
+/* Video description for screen readers only */
+#contact section section p {
     position: fixed;
     left: -1000rem;
     top: -1000rem;
@@ -548,14 +516,14 @@ footer {
 /* Initially hide help video.
     Video overlay,
     Video container */
-#contact form section div:first-of-type,
-#contact form section div:last-of-type {
+#contact section section div:first-of-type,
+#contact section section div:last-of-type {
     display: none;
 }
 
-/* To make video popup modal a background is placed over page content
+/* To make video popup modal a background is placed over entire page content
  to prevent user interactivity until video popup is closed */
-#contact form section div:first-of-type.show {
+#contact section section div:first-of-type.show {
     display: block;
     position: fixed;
     top: 0;
@@ -567,7 +535,7 @@ footer {
 }
 
 /* Help video container positioned in center of browser */
-#contact form section div:last-of-type.show {
+#contact section section div:last-of-type.show {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -583,7 +551,7 @@ footer {
 }
 
 /* Button to close the video popup */
-#contact form section button {
+#contact section section button {
     position: relative;
     line-height: var(--font-size-super-large);
     left: calc(100% - 4rem);
@@ -593,21 +561,59 @@ footer {
     text-align: center;
 }
 
-/* Color not in palette but required to  */
-#contact form section button:hover {
+/* Video popup close button hover color  */
+#contact section section button:hover {
     background: #E81123;
 }
 
 /* Help video */
-#contact video {
+#contact section section video {
     width: 100%;
 }
 
-/* Note to accessor, labels should not be removed according to
-    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input */
+/* V----------V----------V Main form V----------V----------V */
 
-/* Except for checkbox and radio buttons, remove labels */
-#contact form > fieldset > label:not(:last-of-type) {
+/* Initially align all main form content text to the left */
+#contact form fieldset * {
+    text-align: left;
+}
+
+/* Main form content and radio buttons regions */
+#contact form > fieldset,
+#contact form > fieldset fieldset {
+    padding: 1rem 0;
+    z-index: 10;
+}
+
+/* Main content and radio buttons heading */
+#contact form legend {
+    padding-left: 1.5rem;
+}
+
+/* Help link CTA to show a popup video */
+#contact form a {
+    display: inline-block;
+    margin: 1rem auto;
+    padding-bottom: 12rem;
+}
+
+/* Denotes required information text */
+#contact form > fieldset > span {
+    display: block;
+    height: 2rem;
+    line-height: 2rem;
+    padding-left: 1.5rem;
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    z-index: 100;
+    background-image: url(../images/black-star-icon.svg);
+}
+
+/* Visibly remove labels from mobile devices but make available for screen readers */
+#contact form > fieldset div label {
     position: fixed;
     left: -1000rem;
     top: -1000rem;
@@ -624,92 +630,127 @@ footer {
 /* Icons for all text and numeric input types */
 #contact form img {
     position: absolute;
-    left: 0;
-    top: 0.7rem;
     width: 1.2rem;
-    z-index: 10;
-}
-
-/* Required to prevent chrome autofill background covering icons
- Kostiantyn Ko, 2021,
- https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
-input:-webkit-autofill,
-input:-webkit-autofill:focus {
-  transition: background-color 600000s 0s, color 600000s 0s;
+    height: 3rem;
+    margin-left: 2.5rem;
+    z-index: 100;
 }
 
 /* All text and numeric input types */
 #contact form input:not([type=checkbox]):not([type=radio]),
 #contact form textarea {
-    display: inline-block;
+    display: block;
     position: relative;
-    width: 100%;
-    padding: 0.5rem 2rem;
-    margin: 0 auto;
+    width: calc(100% - 4rem);
+    height: 3rem;
+    margin-left: 2rem;
+    padding: 0 0.5rem 0 2rem;
     border: 0.1rem solid var(--color-warm-gray);
     border-radius: 0.7rem;
-    text-align: left;
+}
+
+/* Common required state, cross and check-mark styling  */
+#contact form input:required ~ span::after,
+#contact form textarea:required ~ span::after,
+#contact form input ~ div::before,
+#contact form textarea ~ div::before {
+    display: block;
+    position: relative;
+    content: "";
+    top: -2rem;
+    width: 1rem;
+    height: 1rem;
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 100;
 }
 
 /* All text input and textarea with required state */
-#contact input:required ~ span::after,
-#contact textarea:required ~ span::after {
-    content: "Required";
-    display: inline-block;
-    width: 100%;
-    height: fit-content;
-    padding-left: 1rem;
-    text-align: left;
+#contact form input:required ~ span::after,
+#contact form textarea:required ~ span::after {
+    float: left;
+    margin-left: 0.5rem;
+    background-image: url(../images/black-star-icon.svg);
 }
 
-/* Error div */
-#contact form > fieldset div div {
-    display: inline-block;
-    width: 100%;
+/* Create a space for the error div */
+#contact form div div {
     height: 2rem;
-    padding-left: 1rem;
-    text-align: left;
-    vertical-align: middle;
     margin-bottom: 2rem;
 }
 
-#contact form > fieldset > div:nth-of-type(1) input:invalid ~ div::after {
-    content: "Must contain only letters, hyphen and apostrophes";
+/* Common cross and check-mark symbol styling */
+#contact form input ~ div::before,
+#contact form textarea ~ div::before {
+    float: right;
+    margin-right: 0.5rem;
 }
 
-#contact form > fieldset > div:nth-of-type(2) input:invalid ~ div::after {
-    content: "Must contain only letters, hyphen and apostrophes";
+/* All text input and textarea with valid state */
+#contact form input:not(:placeholder-shown):valid ~ div::before,
+#contact form textarea:not(:placeholder-shown):valid ~ div::before {
+    background-image: url(../images/check-mark-icon.svg);
 }
 
-#contact form > fieldset > div:nth-of-type(3) input:invalid ~ div::after {
+/* All text input and textarea with invalid state */
+#contact form input:not(:placeholder-shown):invalid ~ div::before,
+#contact form textarea:not(:placeholder-shown):invalid ~ div::before {
+    background-image: url(../images/cross-icon.svg);
+}
+
+/* Error div message styling */
+#contact form > fieldset > div input:invalid ~ div::after {
+    display: block;
+    position: relative;
+    width: fit-content;
+    height: 2rem;
+    line-height: 2rem;
+    padding-left: 2.5rem;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* First name and last name error message */
+#contact form > fieldset > div:nth-of-type(1) input:not(:placeholder-shown):invalid ~ div::after,
+#contact form > fieldset > div:nth-of-type(2) input:not(:placeholder-shown):invalid ~ div::after {
+    content: "Name can only contain letters, hyphen and apostrophes";
+}
+
+/* Email address error message */
+#contact form > fieldset > div:nth-of-type(3) input:not(:placeholder-shown):invalid ~ div::after {
     content: "Please enter a valid email address";
 }
 
-#contact form > fieldset > div:nth-of-type(4) input:invalid ~ div::after {
+/* Phone number error message */
+#contact form > fieldset > div:nth-of-type(4) input:not(:placeholder-shown):invalid ~ div::after {
     content: "Phone number can only contain numbers and spaces";
 }
 
-#contact form > fieldset > div:nth-of-type(6) input:invalid ~ div::after {
+/* Preferred subscription length error message */
+#contact form > fieldset > div:nth-of-type(6) input:not(:placeholder-shown):invalid ~ div::after {
     content: "Please enter a whole number between 6 and 24";
 }
 
-#contact form > fieldset > div:nth-of-type(1) input:placeholder-shown ~ div::after,
-#contact form > fieldset > div:nth-of-type(2) input:placeholder-shown ~ div::after,
-#contact form > fieldset > div:nth-of-type(3) input:placeholder-shown ~ div::after,
-#contact form > fieldset > div:nth-of-type(4) input:placeholder-shown ~ div::after,
-#contact form > fieldset > div:nth-of-type(6) input:placeholder-shown ~ div::after {
-    content: "";
+/* Text inputs borders with invalid state */
+#contact form input:not(:focus):not(:placeholder-shown):not([type=checkbox]):not([type=radio]):invalid {
+    border: 0.2rem solid red ;
 }
 
-/* Set min and max size of textarea */
-#contact form textarea {
+/* Text inputs borders with valid state */
+#contact form input:not(:focus):not(:placeholder-shown):not([type=checkbox]):not([type=radio]):valid {
+    border: 0.2rem solid green ;
+}
+
+ /* Set min and max size of textarea */
+ #contact form textarea {
     min-height: 6rem;
     max-height: 20rem;
     resize: vertical;
 }
 
-/* Remove goals and preferred subscription inputs which are not required inputs */
-#contact form fieldset > div:nth-last-of-type(-n+2) {
+/* Remove optional goals and preferred subscription inputs */
+#contact form fieldset > div:nth-last-of-type(n+2):nth-last-of-type(-n+3) {
     display: none;
 }
 
@@ -720,58 +761,15 @@ input:-webkit-autofill:focus {
     box-shadow: 0 0.1rem 0 0 var(--color-warm-gray);
 }
 
-#contact input::placeholder,
+/* Checkbox */
+#contact form > fieldset > label {
+    padding-left: 2rem;
+}
+
+/* All text inputs and textarea */
+#contact form input::placeholder,
 #contact form textarea::placeholder {
     color: var(--color-gray-blue);
-}
-
-/* All text inputs and textarea all states */
-#contact input:valid,
-#contact input:invalid,
-input:focus:invalid,
-#contact textarea:valid,
-#contact textarea:invalid,
-textarea:focus:invalid {
-    background-repeat: no-repeat;
-    z-index: 15;
-}
-
-/* All text inputs only all states */
-#contact input:valid,
-#contact input:invalid,
-input:focus:invalid {
-    background-position: top 50% right 2%;
-}
-
-/* Textarea only all states */
-#contact textarea:valid,
-#contact textarea:invalid,
-textarea:focus:invalid {
-    background-position: top 10% right 2%;
-}
-
-/* All text inputs and textarea all invalid states */
-#contact input:invalid,
-input:focus:invalid,
-#contact textarea:invalid,
-textarea:focus:invalid {
-    background: var(--color-white);
-    background-image: url(../images/cross-icon.svg);
-    background-size: 0.8rem;
-}
-
-/* All text input and textarea valid state */
-#contact input:valid,
-#contact textarea:valid {
-    background: var(--color-white);
-    background-image: url(../images/check-mark-icon.svg);
-    background-size: 1rem;
-}
-
-/* All text input and textarea with no input */
-#contact input:placeholder-shown,
-#contact textarea:placeholder-shown {
-    background-image: none;
 }
 
 /* Checkbox and radio button labels */
@@ -790,6 +788,12 @@ textarea:focus:invalid {
     transform: scale(1.4);
 }
 
+/* Radio buttons container */
+#contact form fieldset > fieldset {
+    padding: 0 3rem;
+    margin: 2rem 0;
+}
+
 /* Submit button */
 #contact form fieldset > button {
     display: block;
@@ -804,6 +808,8 @@ textarea:focus:invalid {
 
 /* Our locations */
 
+/* V----------V----------V Our locations V----------V----------V */
+
 /* Location cards */
 #contact article div article {
     display: flex;
@@ -816,20 +822,20 @@ textarea:focus:invalid {
 }
 
 /* Location card heading */
-#contact article div h3 {
+#contact article > div h3 {
     width: 100%;
     padding: 1rem;
     text-align: left;
 }
 
 /* Location card icon */
-#contact article div img {
+#contact article > div img {
     width: 1.5rem;
     padding: 0 0 1.5rem 0.5rem;
 }
 
 /* Location card details */
-#contact article div p {
+#contact article > div p {
     width: calc(100% - 2.5rem);
     padding: 0 0 1.5rem 1rem;
     text-align: left;
@@ -838,7 +844,7 @@ textarea:focus:invalid {
 /* Contact Us link & Join link
     padding added to increase clickable area
     margin added to create non-clickable area between links */
-#contact article div article a
+#contact article > div article a
 {
     width: calc(100% - 1rem);
     margin: 0.5rem;
@@ -847,35 +853,41 @@ textarea:focus:invalid {
 }
 
 /* Contact Us link */
-#contact article div article a:first-of-type {
+#contact article > div article a:first-of-type {
     color: var(--color-white);
     background: var(--color-dark-gray-blue);
     outline: 0.5rem solid var(--color-dark-gray-blue);
 }
 
 /* Join link */
-#contact article div article a:last-of-type {
+#contact article > div article a:last-of-type {
     background: var(--color-very-dark-orange);
     outline: 0.5rem solid var(--color-very-dark-orange);
 }
 
 /* Need to create focus ring for accessibility */
-#contact article div article a:focus {
+#contact article > div article a:focus {
     outline-style: double;
     border-radius: 0.05rem;
 }
 
-/* #endregion Contact page */
+/* #endregion ++++++++++ Contacts page ++++++++++ */
 
-/* #region Media queries */
+/* V----------V----------V Media queries V----------V----------V */
 
 /* 1000px */
 @media all and (min-width: 62.5rem) {
+
+    /* #region ++++++++++ Common ++++++++++ */
 
     /* Scroll padding not required for scrollable banner on desktop */
     html {
         scroll-padding-top: 0;
     }
+
+    /* #endregion ++++++++++ Common ++++++++++ */
+
+    /* #region ++++++++++ Header ++++++++++ */
 
     /* Scrollable navigation banner on desktop */
     header nav {
@@ -906,6 +918,7 @@ textarea:focus:invalid {
         align-items: center;
     }
 
+    /* Primary navigation menu link */
     header nav ul li {
         width: fit-content;
         padding: 0 0.5rem;
@@ -989,6 +1002,10 @@ textarea:focus:invalid {
         padding-right: 2rem;
     }
 
+    /* #endregion ++++++++++ Header ++++++++++ */
+
+    /* #region ++++++++++ Main content ++++++++++ */
+
     /* Main content */
     main section {
         width: 80%;
@@ -996,7 +1013,7 @@ textarea:focus:invalid {
         padding: 0;
     }
 
-    /* Main content articles */
+    /* Main content articles photo gallery on desktop */
     section > article > div {
         display: grid;
         column-gap: 5%;
@@ -1017,46 +1034,11 @@ textarea:focus:invalid {
         width: 30%;
     }
 
-    /* Show goals input */
-    #contact form fieldset > div:nth-last-of-type(-n+2) {
-        display: block;
-    }
+    /* #endregion ++++++++++ Main content ++++++++++ */
 
-    #contact form {
-        width: 100%;
-    }
+    /* V----------V----------V Page specific styling V----------V----------V */
 
-    #contact form > fieldset {
-        max-width: 40rem;
-        margin: 0 auto;
-        padding: 2rem;
-        border: 1px solid var(--color-dark-gray-blue);
-        border-radius: 1rem;
-    }
-
-    #contact form > fieldset > label:not(:last-of-type) {
-        display: block;
-        position: static;
-        margin-bottom: 0.5rem;
-        color: var(--color-black);
-        font-size: var(--font-size-default);
-    }
-
-    #contact-form fieldset legend {
-        padding: 1rem;
-    }
-
-    #contact-form fieldset fieldset {
-        margin-bottom: 2rem;
-    }
-
-    #contact section > article > div {
-        display: grid;
-        margin: 0 auto;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 20px;
-        align-items: flex-start;
-    }
+    /* #region ++++++++++ Memberships page ++++++++++ */
 
     /* Main content articles */
     #memberships section > article:first-of-type > div {
@@ -1078,9 +1060,63 @@ textarea:focus:invalid {
         box-shadow: #00000026 0 0.8rem 1.4rem 0, #00000026 0 0.1rem 0.2rem 0;
     }
 
+    /* Membership card details */
     #memberships section > article article ul {
         min-height: 16em;
     }
-}
 
-/* #endregion Media queries */
+    /* #endregion ++++++++++ Memberships page ++++++++++ */
+
+    /* #region ++++++++++ Contacts page ++++++++++ */
+
+    /* Limit size of help video container on desktops */
+    #contact section section div:last-of-type.show {
+        max-width: 50rem;
+    }
+
+    #contact form {
+        width: 100%;
+    }
+
+    /* Display form border on desktop */
+    #contact form > fieldset {
+        max-width: 50rem;
+        margin: 0 auto;
+        padding: 2rem;
+        border: 1px solid var(--color-dark-gray-blue);
+        border-radius: 1rem;
+    }
+
+    /* Display optional goals and preferred subscription inputs */
+    #contact form fieldset > div:nth-last-of-type(n+2):nth-last-of-type(-n+3) {
+        display: block;
+    }
+
+    /* Display labels on form */
+    #contact form > fieldset div label {
+        display: block;
+        position: static;
+        margin: 0 0  0.5rem 3rem;
+        color: var(--color-black);
+        font-size: var(--font-size-default);
+    }
+
+    #contact-form fieldset legend {
+        padding: 1rem;
+    }
+
+    #contact-form fieldset fieldset {
+        margin-bottom: 2rem;
+    }
+
+    /* Address cards */
+    #contact section > article > div {
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+        align-items: flex-start;
+    }
+
+    /* #endregion ++++++++++ Contacts page ++++++++++ */
+}
