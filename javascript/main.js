@@ -5,10 +5,10 @@ const openHelpVideoLink = document.querySelector("#open-help-video-link");
 const closeHelpVideoButton = document.querySelector("#close-help-video-button");
 const helpVideoContainer = document.querySelector("#help-video-container");
 const videoOverlay = document.querySelector("#video-overlay");
+const video = document.querySelector("#video");
 const contactMeCheckbox = document.querySelector("#contact #contact-me");
 const emailContactRadioButton = document.querySelector("#contact #email-contact");
 const phoneContactRadioButton = document.querySelector("#contact #phone-contact");
-// const requiredInputs = document.querySelectorAll("#contact [required]");
 const submitButton = document.querySelector("#contact #submit");
 
 /**
@@ -89,6 +89,9 @@ contactMeCheckbox.addEventListener("click", function(e) {
     phoneContactRadioButton.disabled = !contactMeCheckbox.checked;
 });
 
+/**
+ * Handles the submit button click event for the contact form
+ */
 submitButton.addEventListener("click", function(e) {
     var requiredInputs = document.querySelectorAll("#contact [required]");
     requiredInputs.forEach((el) => {
@@ -96,10 +99,6 @@ submitButton.addEventListener("click", function(e) {
             el.classList.add("no-value");
         }
     });
-});
-
-requiredInputs.addEventListener("click", function(e) {
-    // if
 });
 
 /**
@@ -147,4 +146,6 @@ function showVideoContainer(videoContainer) {
 function closeVideoContainer(videoContainer) {
     videoContainer.classList.remove("show");
     videoOverlay.classList.remove("show");
+    video.pause();
+    video.currentTine = 0;
 }
