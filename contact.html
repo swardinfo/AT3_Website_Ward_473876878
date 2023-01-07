@@ -28,7 +28,7 @@
                 <div id="menu" aria-label="Main"></div>
                 <!-- CTA at end of menu on desktop only -->
                 <aside>
-                    <a href="./contact.html">Join</a>
+                    <a href="./memberships.html#cards">join</a>
                 </aside>
                 <!-- Mobile only menu-button-->
                 <button id="menu-button" hidden aria-disabled="true" aria-expanded="false"
@@ -36,8 +36,8 @@
             </nav>
             <!-- CTA banner Mobile only -->
             <aside>
-                <a href="./contact.html">Join</a>
-                <a href="./contact.html">Find Us</a>
+                <a href="./memberships.html#cards">join</a>
+                <a href="./contact.html#locations">Find Us</a>
             </aside>
             <section>
                 <h1>Health and Fitness</h1>
@@ -45,7 +45,7 @@
             <!-- Banner with slogan and Find Us CTA on desktop only -->
             <aside>
                 <p>We train athletes</p>
-                <a href="./contact.html">Find Us</a>
+                <a href="./contact.html#locations">Find Us</a>
             </aside>
         </header>
         <!-- #endregion Header -->
@@ -53,9 +53,10 @@
             <!-- Full width on mobile, 80% width on desktop -->
             <!-- #region Main content -->
             <!-- Link target -->
-            <section id="contact-form">
-                <article>
+            <section>
+                <article id="contact-form">
                     <h2>Contact</h2>
+                    <!-- Popup video -->
                     <section aria-labelledby="open-help-video-link" aria-describedby="help-video-description">
                         <p id="help-video-description">Click help link to view the help video for this form</p>
                         <!-- Used to overlay the video container to prevent user access behind -->
@@ -63,7 +64,7 @@
                         </div>
                         <!-- Outer container to provide window reference for video -->
                         <div id="help-video-container">
-                            <button type="button" id="close-help-video-button">&times;</button>
+                            <button aria-label="Close" type="button" id="close-help-video-button">&times;</button>
                             <!-- <video id="video" poster="./images/poster.svg" controls> -->
                             <video id="video" autoplay controls>
                                 <source src="./video/Cow-23123-640x360.mp4" type="video/mp4">
@@ -149,7 +150,7 @@
                             <div>
                                 <label for="months" aria-labelledby="months">Preferred subscription length (months, 6 - 24)):</label>
                                 <img src="./images/hashtag-bubble-icon.svg" alt="">
-                                <input id="months" type="number" min="3" max="24" name="months" placeholder="Preferred subscription"
+                                <input id="months" type="number" min="6" max="24" name="months" placeholder="Preferred subscription"
                                     title="Optional subscription length 6 to 24">
                                 <!-- Error div -->
                                 <div>
@@ -200,7 +201,7 @@
                             <img src="./images/envelope-icon.svg" alt="">
                             <p>ashgrove@<wbr>mlstrength.com.au</p>
                             <a href="#contact-form">Contact Us</a>
-                            <a href="memberships.html#offers">Join</a>
+                            <a href="./memberships.html#cards">Join</a>
                         </article>
                         <article>
                             <h3>Brisbane City</h3>
@@ -211,7 +212,7 @@
                             <img src="./images/envelope-icon.svg" alt="">
                             <p>brisbane@<wbr>mlstrength.com.au</p>
                             <a href="#contact-form">Contact Us</a>
-                            <a href="memberships.html#offers">Join</a>
+                            <a href="./memberships.html#cards">Join</a>
                         </article>
                         <article>
                             <h3>Chermside</h3>
@@ -222,7 +223,7 @@
                             <img src="./images/envelope-icon.svg" alt="">
                             <p>chermside@<wbr>mlstrength.com.au</p>
                             <a href="#contact-form">Contact Us</a>
-                            <a href="memberships.html#offers">Join</a>
+                            <a href="./memberships.html#cards">Join</a>
                         </article>
                         <article>
                             <h3>Graceville</h3>
@@ -233,7 +234,7 @@
                             <img src="./images/envelope-icon.svg" alt="">
                             <p>graceville@<wbr>mlstrength.com.au</p>
                             <a href="#contact-form">Contact Us</a>
-                            <a href="memberships.html#offers">Join</a>
+                            <a href="./memberships.html#cards">Join</a>
                         </article>
                         <article>
                             <h3>Westlake</h3>
@@ -244,7 +245,7 @@
                             <img src="./images/envelope-icon.svg" alt="">
                             <p>westlake@<wbr>mlstrength.com.au</p>
                             <a href="#contact-form">Contact Us</a>
-                            <a href="memberships.html#offers">Join</a>
+                            <a href="./memberships.html#cards">Join</a>
                         </article>
                     </div>
                 </article>
@@ -254,7 +255,7 @@
             <!-- Full width CTA banner -->
             <aside>
                 <p>We train athletes</p>
-                <a href="./contact.html">Join</a>
+                <a href="./memberships.html#cards">join</a>
             </aside>
             <!-- #endregion End banner -->
         </main>

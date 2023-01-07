@@ -883,7 +883,8 @@ section > article figure img[src$=".svg"] {
 }
 
 /* Text inputs borders with valid state */
-#contact form > fieldset > div input:not(:focus):not(:placeholder-shown):valid {
+#contact form > fieldset > div input:not(:focus):not(:placeholder-shown):valid,
+#contact form > fieldset > div textarea:not(:focus):not(:placeholder-shown) {
     border: var(--border-input-valid);
 }
 
@@ -1308,10 +1309,6 @@ section > article figure img[src$=".svg"] {
     #about section article:last-of-type article h3 {
         text-align: center;
         margin-bottom: 1rem;
-    }
-
-    #about section article article {
-        /* margin-bottom: 2rem; */
     }
 
     #about section article article p {
