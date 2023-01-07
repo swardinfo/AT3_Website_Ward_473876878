@@ -404,6 +404,12 @@ section > article > p {
     margin-bottom: 1rem;
 }
 
+
+section > article > div p {
+    margin: 1rem 0;
+}
+
+
 /* Margin added to provide space between links */
 section > article > div > a {
     display: inline-block;
@@ -425,9 +431,9 @@ figcaption blockquote {
     text-align: center;
 }
 
-/* Middle heading background */
-section > article:last-of-type > h2,
-section > article:last-of-type > h2 + p {
+/* Article heading background */
+section > article > h2,
+section > article > h2 + p {
     display: inline-block;
     width: 100%;
     padding: 0.5rem 0 1.5rem 0;
@@ -437,15 +443,10 @@ section > article:last-of-type > h2 + p {
     background-color: #ffffffa0;
 }
 
-section > article:last-of-type > h2 + p {
+/* Article heading information background */
+section > article > h2 + p {
     position: relative;
-    top: -2rem;
-}
-
-/* Article icons */
-section > article figure img[src$=".svg"] {
-    width: 25%;
-    margin-top: 4rem;
+    top: -1.5rem;
 }
 
 /* Full width end banner */
@@ -471,6 +472,46 @@ footer {
 /* #endregion ++++++++++ Footer ++++++++++ */
 
 /* V----------V----------V Page specific styling V----------V----------V */
+
+/* #region ++++++++++ Home page ++++++++++ */
+
+/* Article icons */
+section > article figure img[src$=".svg"] {
+    width: 25%;
+    margin-top: 4rem;
+}
+
+/* #endregion ++++++++++ Home page ++++++++++ */
+
+/* #region ++++++++++ Training page ++++++++++ */
+
+#training section > article:last-of-type div {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Group fitness list */
+#training section > article:last-of-type ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+}
+
+
+#training section > article:last-of-type li {
+    display: block;
+    list-style-position: outside;
+    padding: 0.2rem 0;
+    padding-left: 1.5rem;
+    width: fit-content;
+    background-image: url("../images/hand-finger-right-icon.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 1rem;
+}
+
+/* #endregion ++++++++++ Training page ++++++++++ */
 
 /* #region ++++++++++ Memberships page ++++++++++ */
 
@@ -545,7 +586,60 @@ footer {
     text-align: left;
 }
 
-/* #endregion ++++++++++ Memberships ++++++++++ */
+/* #endregion ++++++++++ Memberships page ++++++++++ */
+
+/* #region ++++++++++ About page ++++++++++ */
+
+
+
+/* #about section article:last-of-type div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+} */
+
+/* #about section article:last-of-type article {
+    margin-bottom: 2rem;
+}
+
+#about section article:last-of-type article h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+} */
+
+#about section article article {
+    margin-bottom: 2rem;
+}
+
+#about section article article p {
+    text-align: left;
+}
+
+#about section article article img {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+#about section article article strong {
+    white-space: nowrap;
+    font-size: var(--font-size-default);
+}
+
+/* #about section article:last-of-type article:first-of-type img {
+    max-width: 15rem;
+    float: left;
+    padding: 0 1rem 1rem 0;
+}
+
+#about section article:last-of-type article:last-of-type img {
+    max-width: 15rem;
+    float: left;
+    padding: 0 1rem 1rem 0;
+} */
+
+/* #endregion ++++++++++ About page ++++++++++ */
 
 /* #region ++++++++++ Contacts page ++++++++++ */
 
@@ -977,6 +1071,16 @@ footer {
     h1 {
         top: 23rem;
     }
+
+    /* #region ++++++++++ Training page ++++++++++ */
+
+    #training section > article:last-of-type ul {
+        width: 100%;
+        margin: 0 auto;
+        columns: 2;
+    }
+
+    /* #endregion ++++++++++ Training page ++++++++++ */
 }
 
 /* 1000px */
@@ -1133,14 +1237,30 @@ footer {
         object-fit: cover;
     }
 
-    /* Amenities icons */
-    article img[src$=".svg"] {
-        width: 30%;
+    section > article:first-of-type > h2 {
+        margin-top: 2rem;
     }
 
     /* #endregion ++++++++++ Main content ++++++++++ */
 
     /* V----------V----------V Page specific styling V----------V----------V */
+
+    /* #region ++++++++++ Home page ++++++++++ */
+
+        /* Amenities icons */
+        article img[src$=".svg"] {
+            width: 30%;
+        }
+
+    /* #endregion ++++++++++ Home page ++++++++++ */
+
+    /* #region ++++++++++ Training page ++++++++++ */
+
+    #training section > article:last-of-type ul {
+        columns: 3;
+    }
+
+    /* #endregion ++++++++++ Training page ++++++++++ */
 
     /* #region ++++++++++ Memberships page ++++++++++ */
 
@@ -1170,6 +1290,52 @@ footer {
     }
 
     /* #endregion ++++++++++ Memberships page ++++++++++ */
+
+    /* #region ++++++++++ About page ++++++++++ */
+
+    #about section article:last-of-type div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    }
+
+    #about section article:last-of-type article {
+        margin-bottom: 2rem;
+    }
+
+    #about section article:last-of-type article h3 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    #about section article article {
+        /* margin-bottom: 2rem; */
+    }
+
+    #about section article article p {
+        text-align: left;
+    }
+
+    #about section article article strong {
+        white-space: nowrap;
+        font-size: var(--font-size-default);
+    }
+
+    #about section article:first-of-type article:first-of-type img {
+        max-width: 30%;
+        float: left;
+        padding: 0 1rem 1rem 0;
+    }
+
+    #about section article:last-of-type img {
+        max-width: 15rem;
+        float: left;
+        padding: 0 1rem 1rem 0;
+    }
+
+    /* #endregion ++++++++++ About page ++++++++++ */
 
     /* #region ++++++++++ Contacts page ++++++++++ */
 
