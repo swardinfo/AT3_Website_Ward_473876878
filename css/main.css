@@ -471,7 +471,7 @@ footer {
 
 /* #region ++++++++++ Home page ++++++++++ */
 
-/* Article icons */
+/* Amenities icons */
 section > article figure img[src$=".svg"] {
     width: 25%;
     margin-top: 4rem;
