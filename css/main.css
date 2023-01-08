@@ -91,17 +91,15 @@ meter {
 /* #region ++++++++++ Common ++++++++++ */
 
 :root {
-    --color-white: #FFFFFF;
-    --color-warm-gray: #BFC0C0;
-    --color-very-dark-orange: #EF8354;
-    --color-gray-blue: #4F5D75;
-    --color-dark-gray-blue: #2D3142;
+    --color-white: #ffffff;
+    --color-warm-gray: #bfc0c0;
+    --color-very-dark-orange: #ef8354;
+    --color-gray-blue: #4f5d75;
+    --color-dark-gray-blue: #2d3142;
     --color-black: #000000;
     --color-valid: #008000;
     --color-invalid: #ff0000;
-    --color-close-button-background: #E81123;
-    --color-transparent-bronze: #ffa500c0;
-    --color-transparent-gold: #ffd700a0;
+    --color-close-button-background: #e81123;
     --color-modal-overlay: #ffffff80;
     --color-dialog-header-background: #ccccccc0;
     --font-size-small: 0.9rem;
@@ -160,7 +158,6 @@ h2 {
 }
 
 h3,
-strong,
 legend {
     font-size: var(--font-size-large-1);
 }
@@ -451,7 +448,7 @@ section > article > h2 + p {
 /* Full width end banner */
 main > aside {
     width: 100%;
-    background-color: var(--color-warm-gray);
+    background: var(--color-warm-gray);
 }
 
 /* #endregion ++++++++++ Main content ++++++++++ */
@@ -538,17 +535,17 @@ section > article figure img[src$=".svg"] {
     background-repeat: no-repeat;
     background-position: center center;
     background-blend-mode: multiply;
-    font-size: var(--font-size-large-3);
+    font-size: var(--font-size-large-4);
 }
 
 /* Bronze membership card header banner */
 #memberships section > article article:nth-of-type(1) h3 {
-    background-color: var(--color-transparent-bronze);
+    background-color: #ffa500c0;
 }
 
 /* Gold membership card header banner */
 #memberships section > article article:nth-of-type(3) h3 {
-    background-color: var(--color-transparent-gold);
+    background-color: #ffd700a0;
 }
 
 /* Membership card details */
@@ -575,6 +572,10 @@ section > article figure img[src$=".svg"] {
     margin: 0 auto 0.5rem auto;
 }
 
+#memberships section > article article strong{
+    font-size: var(--font-size-large-3);
+}
+
 /* Membership card select CTA */
 #memberships section > article article a {
     margin: 0 auto 2rem auto;
@@ -594,9 +595,14 @@ section > article figure img[src$=".svg"] {
     margin-bottom: 2rem;
 }
 
+#about section article article h3 {
+    margin-bottom: 1rem;
+}
+
 /* All about page articles paragraphs */
 #about section article article p {
     text-align: left;
+    margin-bottom: 1rem;
 }
 
 /* All about page articles images */
@@ -608,7 +614,6 @@ section > article figure img[src$=".svg"] {
 /* All about page articles strong text */
 #about section article article strong {
     white-space: nowrap;
-    font-size: var(--font-size-default);
 }
 
 /* #endregion ++++++++++ About page ++++++++++ */
@@ -1030,7 +1035,7 @@ section > article figure img[src$=".svg"] {
 
 /* V----------V----------V Media queries V----------V----------V */
 
-/* 1000px */
+/* 768px */
 @media all and (min-width: 48rem) {
 
     /* Header image */
@@ -1150,7 +1155,6 @@ section > article figure img[src$=".svg"] {
 
     /* Header image */
     header section {
-        height: 22rem;
         margin-bottom: 0;
         background-position: 70% 0%;
     }
@@ -1283,11 +1287,6 @@ section > article figure img[src$=".svg"] {
 
     #about section article article p {
         text-align: left;
-    }
-
-    #about section article article strong {
-        white-space: nowrap;
-        font-size: var(--font-size-default);
     }
 
     #about section article:first-of-type article:first-of-type img {
