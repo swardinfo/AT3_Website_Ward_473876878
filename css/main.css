@@ -1,3 +1,11 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/* Stephen Ward */
 /* CSS is written for mobile first design */
 
 /* #region ++++++++++ Normalization ++++++++++ */
@@ -20,7 +28,8 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 /* Reapply the pointer cursor for anchor tags */
@@ -56,10 +65,23 @@ textarea {
 /* minimum style to allow to style meter element */
 meter {
     -webkit-appearance: revert;
-    appearance: revert;
+    -moz-appearance: revert;
+         appearance: revert;
 }
 
 /* reset default text opacity of input placeholder */
+::-webkit-input-placeholder {
+    color: unset;
+}
+::-moz-placeholder {
+    color: unset;
+}
+:-ms-input-placeholder {
+    color: unset;
+}
+::-ms-input-placeholder {
+    color: unset;
+}
 ::placeholder {
     color: unset;
 }
@@ -167,16 +189,23 @@ textarea {
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
-    hyphens: auto;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
 }
 
 /* Banner, mobile devices only, between nav menu and header image,
     Banner above footer */
 header > aside:first-of-type,
 main > aside {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     padding: 1rem 0;
 }
@@ -194,6 +223,8 @@ aside a,
 #memberships section > article article a,
 #contact form fieldset a {
     width: 8rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     padding: 0.25rem 0;
     color: var(--color-black);
@@ -209,9 +240,15 @@ aside a,
 
 /* Navigation banner, fixed on mobile devices*/
 header nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: fixed;
     left: 0;
     top: 0;
@@ -269,7 +306,11 @@ header nav ul li a {
     color: var(--color-white);
     text-align: center;
     font-weight: bold;
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: -webkit-transform 0.4s;
+    -o-transition: transform 0.4s;
     transition: transform 0.4s;
+    transition: transform 0.4s, -webkit-transform 0.4s;
 }
 
 /* Nav links hover animation */
@@ -277,7 +318,9 @@ header nav ul li a:hover {
     text-decoration: none;
     color: var(--color-dark-gray-blue);
     background: var(--color-white);
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
 }
 
 /* Underline nav link for current page */
@@ -285,7 +328,8 @@ header nav ul li a:hover {
 #memberships nav ul a[href="memberships.html"],
 #about nav ul a[href="about.html"],
 #contact nav ul a[href="contact.html"] {
-    box-shadow: 0 0.1rem 0 0 var(--color-white);
+    -webkit-box-shadow: 0 0.1rem 0 0 var(--color-white);
+            box-shadow: 0 0.1rem 0 0 var(--color-white);
 }
 
 /* Hide the 'Join' CTA at end of menu on mobile devices */
@@ -380,10 +424,18 @@ header > aside:last-of-type {
 /* Main section 100% width on mobile only */
 main section,
 section > article {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-line-pack: center;
+        align-content: center;
     width: 100%;
     text-align: center;
     padding: 1rem 0;
@@ -456,9 +508,15 @@ main > aside {
 /* #region ++++++++++ Footer ++++++++++ */
 
 footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     padding: 1.3rem 0;
     color: var(--color-white);
@@ -498,6 +556,8 @@ section > article figure img[src$=".svg"] {
 #training section > article:last-of-type li {
     display: block;
     list-style-position: outside;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     padding: 0.2rem 0;
     padding-left: 1.5rem;
@@ -513,10 +573,18 @@ section > article figure img[src$=".svg"] {
 
 /* Membership cards */
 #memberships section > article article {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-line-pack: center;
+        align-content: center;
     width: 100%;
     border-top: 0.05rem solid var(--color-warm-gray);
     text-align: center;
@@ -654,13 +722,20 @@ section > article figure img[src$=".svg"] {
 
 /* Popup container positioned in center of browser */
 #contact section section div:last-of-type.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: fixed;
     top: 50%;
     left: 50%;
     width: 100%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     background: var(--color-dialog-header-background);
     opacity: 1;
     border: 0.05rem solid var(--color-warm-gray);
@@ -806,12 +881,24 @@ section > article figure img[src$=".svg"] {
 }
 
 /* All text input and textarea with valid state */
+#contact form input:not(:-moz-placeholder-shown):valid ~ div::before, #contact form textarea:not(:-moz-placeholder-shown):valid ~ div::before {
+    background-image: url(../images/check-mark-icon.svg);
+}
+#contact form input:not(:-ms-input-placeholder):valid ~ div::before, #contact form textarea:not(:-ms-input-placeholder):valid ~ div::before {
+    background-image: url(../images/check-mark-icon.svg);
+}
 #contact form input:not(:placeholder-shown):valid ~ div::before,
 #contact form textarea:not(:placeholder-shown):valid ~ div::before {
     background-image: url(../images/check-mark-icon.svg);
 }
 
 /* All text input and textarea with invalid state */
+#contact form input:not(:-moz-placeholder-shown):invalid ~ div::before, #contact form textarea:not(:-moz-placeholder-shown):invalid ~ div::before {
+    background-image: url(../images/cross-icon.svg);
+}
+#contact form input:not(:-ms-input-placeholder):invalid ~ div::before, #contact form textarea:not(:-ms-input-placeholder):invalid ~ div::before {
+    background-image: url(../images/cross-icon.svg);
+}
 #contact form input:not(:placeholder-shown):invalid ~ div::before,
 #contact form textarea:not(:placeholder-shown):invalid ~ div::before {
     background-image: url(../images/cross-icon.svg);
@@ -822,6 +909,8 @@ section > article figure img[src$=".svg"] {
 #contact form > fieldset > div textarea:invalid ~ div::after{
     display: block;
     position: relative;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     height: 2rem;
     padding-left: 2.5rem;
@@ -831,33 +920,69 @@ section > article figure img[src$=".svg"] {
 }
 
 /* First name and last name error message */
+#contact form > fieldset > div:nth-of-type(1) input:not(:-moz-placeholder-shown):invalid ~ div::after, #contact form > fieldset > div:nth-of-type(2) input:not(:-moz-placeholder-shown):invalid ~ div::after {
+    content: "Name can only contain letters, hyphen and apostrophes";
+}
+#contact form > fieldset > div:nth-of-type(1) input:not(:-ms-input-placeholder):invalid ~ div::after, #contact form > fieldset > div:nth-of-type(2) input:not(:-ms-input-placeholder):invalid ~ div::after {
+    content: "Name can only contain letters, hyphen and apostrophes";
+}
 #contact form > fieldset > div:nth-of-type(1) input:not(:placeholder-shown):invalid ~ div::after,
 #contact form > fieldset > div:nth-of-type(2) input:not(:placeholder-shown):invalid ~ div::after {
     content: "Name can only contain letters, hyphen and apostrophes";
 }
 
 /* Email address error message */
+#contact form > fieldset > div:nth-of-type(3) input:not(:-moz-placeholder-shown):invalid ~ div::after {
+    content: "Please enter a valid email address";
+}
+#contact form > fieldset > div:nth-of-type(3) input:not(:-ms-input-placeholder):invalid ~ div::after {
+    content: "Please enter a valid email address";
+}
 #contact form > fieldset > div:nth-of-type(3) input:not(:placeholder-shown):invalid ~ div::after {
     content: "Please enter a valid email address";
 }
 
 /* Phone number error message */
+#contact form > fieldset > div:nth-of-type(4) input:not(:-moz-placeholder-shown):invalid ~ div::after {
+    content: "Phone number can only contain numbers and spaces";
+}
+#contact form > fieldset > div:nth-of-type(4) input:not(:-ms-input-placeholder):invalid ~ div::after {
+    content: "Phone number can only contain numbers and spaces";
+}
 #contact form > fieldset > div:nth-of-type(4) input:not(:placeholder-shown):invalid ~ div::after {
     content: "Phone number can only contain numbers and spaces";
 }
 
 /* Preferred subscription length error message */
+#contact form > fieldset > div:nth-of-type(6) input:not(:-moz-placeholder-shown):invalid ~ div::after {
+    content: "Please enter a whole number between 6 and 24";
+}
+#contact form > fieldset > div:nth-of-type(6) input:not(:-ms-input-placeholder):invalid ~ div::after {
+    content: "Please enter a whole number between 6 and 24";
+}
 #contact form > fieldset > div:nth-of-type(6) input:not(:placeholder-shown):invalid ~ div::after {
     content: "Please enter a whole number between 6 and 24";
 }
 
 /* Text inputs borders with invalid state */
 /* #contact form fieldset div input:not(:focus):not(:placeholder-shown):not([type=checkbox]):not([type=radio]):invalid { */
+#contact form > fieldset > div input:not(:focus):not(:-moz-placeholder-shown):invalid {
+    border: var(--border-input-invalid);
+}
+#contact form > fieldset > div input:not(:focus):not(:-ms-input-placeholder):invalid {
+    border: var(--border-input-invalid);
+}
 #contact form > fieldset > div input:not(:focus):not(:placeholder-shown):invalid {
     border: var(--border-input-invalid);
 }
 
 /* Text inputs borders with valid state */
+#contact form > fieldset > div input:not(:focus):not(:-moz-placeholder-shown):valid, #contact form > fieldset > div textarea:not(:focus):not(:-moz-placeholder-shown) {
+    border: var(--border-input-valid);
+}
+#contact form > fieldset > div input:not(:focus):not(:-ms-input-placeholder):valid, #contact form > fieldset > div textarea:not(:focus):not(:-ms-input-placeholder) {
+    border: var(--border-input-valid);
+}
 #contact form > fieldset > div input:not(:focus):not(:placeholder-shown):valid,
 #contact form > fieldset > div textarea:not(:focus):not(:placeholder-shown) {
     border: var(--border-input-valid);
@@ -879,7 +1004,8 @@ section > article figure img[src$=".svg"] {
 #contact form > fieldset input:hover,
 #contact form textarea:hover,
 #contact form fieldset > button:hover {
-    box-shadow: 0 0.1rem 0 0 var(--color-warm-gray);
+    -webkit-box-shadow: 0 0.1rem 0 0 var(--color-warm-gray);
+            box-shadow: 0 0.1rem 0 0 var(--color-warm-gray);
 }
 
 /* Checkbox */
@@ -888,6 +1014,18 @@ section > article figure img[src$=".svg"] {
 }
 
 /* All text inputs and textarea */
+#contact form input::-webkit-input-placeholder, #contact form textarea::-webkit-input-placeholder {
+    color: var(--color-gray-blue);
+}
+#contact form input::-moz-placeholder, #contact form textarea::-moz-placeholder {
+    color: var(--color-gray-blue);
+}
+#contact form input:-ms-input-placeholder, #contact form textarea:-ms-input-placeholder {
+    color: var(--color-gray-blue);
+}
+#contact form input::-ms-input-placeholder, #contact form textarea::-ms-input-placeholder {
+    color: var(--color-gray-blue);
+}
 #contact form input::placeholder,
 #contact form textarea::placeholder {
     color: var(--color-gray-blue);
@@ -897,16 +1035,22 @@ section > article figure img[src$=".svg"] {
 #contact form > fieldset label:last-of-type,
 #contact form > fieldset fieldset label {
     display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
 /* Required to restore appearance which is removed by CSS reset */
 #contact form input[type=checkbox],
 #contact form input[type=radio] {
-    appearance: auto;
+    -webkit-appearance: auto;
+       -moz-appearance: auto;
+            appearance: auto;
     margin: 1rem 1rem;
     cursor: default;
-    transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+            transform: scale(1.4);
 }
 
 /* Radio buttons container */
@@ -972,10 +1116,18 @@ section > article figure img[src$=".svg"] {
 
 /* Location cards */
 #contact article div article {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     margin-bottom: 3rem;
     border: 0.05rem solid var(--color-warm-gray);
@@ -1051,7 +1203,9 @@ section > article figure img[src$=".svg"] {
     /* #region ++++++++++ Training page ++++++++++ */
 
     #training section > article:last-of-type ul {
-        columns: 2;
+        -webkit-columns: 2;
+           -moz-columns: 2;
+                columns: 2;
         width: 100%;
         margin: 0 auto;
     }
@@ -1087,6 +1241,8 @@ section > article figure img[src$=".svg"] {
     header nav div {
         display: inline-block;
         position: static;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
     }
 
@@ -1097,13 +1253,21 @@ section > article figure img[src$=".svg"] {
 
     /* Primary navigation menu */
     header nav ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     /* Primary navigation menu link */
     header nav ul li {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         padding: 0 0.5rem;
     }
@@ -1168,10 +1332,17 @@ section > article figure img[src$=".svg"] {
     /* Banner with slogan and Find Us CTA */
     header > aside:last-of-type,
     main > aside {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         padding: 1rem 0;
     }
 
@@ -1198,18 +1369,37 @@ section > article figure img[src$=".svg"] {
 
     /* Main content articles photo gallery on desktop */
     section > article > div {
+        display: -ms-grid;
         display: grid;
-        column-gap: 5%;
+        -webkit-column-gap: 5%;
+           -moz-column-gap: 5%;
+                column-gap: 5%;
+        -ms-grid-columns: 1fr 5% 1fr 5% 1fr;
         grid-template-columns: 1fr 1fr 1fr;
+        -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-auto-flow: row;
         grid-auto-rows: 1fr;
     }
+    section > article > div > *:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    section > article > div > *:nth-child(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+    section > article > div > *:nth-child(3) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 5;
+    }
 
     section article a img {
         min-height:  10rem;
-        object-position: center;
-        object-fit: cover;
+        -o-object-position: center;
+           object-position: center;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
 
     section > article:first-of-type > h2 {
@@ -1232,7 +1422,9 @@ section > article figure img[src$=".svg"] {
     /* #region ++++++++++ Training page ++++++++++ */
 
     #training section > article:last-of-type ul {
-        columns: 3;
+        -webkit-columns: 3;
+           -moz-columns: 3;
+                columns: 3;
     }
 
     /* #endregion ++++++++++ Training page ++++++++++ */
@@ -1241,11 +1433,22 @@ section > article figure img[src$=".svg"] {
 
     /* Main content articles */
     #memberships section > article:first-of-type > div {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        column-gap: 0;
-        align-items: flex-start;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-column-gap: 0;
+           -moz-column-gap: 0;
+                column-gap: 0;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
         margin: 0 auto;
         width: 100%;
     }
@@ -1256,7 +1459,8 @@ section > article figure img[src$=".svg"] {
         margin: 0 1rem;
         border-radius: 1rem;
         overflow: hidden;
-        box-shadow: #00000026 0 0.8rem 1.4rem 0, #00000026 0 0.1rem 0.2rem 0;
+        -webkit-box-shadow: #00000026 0 0.8rem 1.4rem 0, #00000026 0 0.1rem 0.2rem 0;
+                box-shadow: #00000026 0 0.8rem 1.4rem 0, #00000026 0 0.1rem 0.2rem 0;
     }
 
     /* Membership card details */
@@ -1269,10 +1473,18 @@ section > article figure img[src$=".svg"] {
     /* #region ++++++++++ About page ++++++++++ */
 
     #about section article:last-of-type div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 0 auto;
     }
 
@@ -1347,10 +1559,16 @@ section > article figure img[src$=".svg"] {
 
     /* Address cards */
     #contact section > article > div {
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 20px;
-        align-items: flex-start;
+        -webkit-column-gap: 20px;
+           -moz-column-gap: 20px;
+                column-gap: 20px;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
         margin: 0 auto;
     }
 
